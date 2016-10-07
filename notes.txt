@@ -1,0 +1,55 @@
+Models/Migrations
+-----------------
+word
+  #has_many :words_genres
+  #has_many :genres, through: :words_genres
+  
+
+  - id
+  - string  
+
+genre
+  #has_many :words_genres
+  #has_many :words, through: :words_genres
+  #belongs_to :band_name
+
+  - id
+  - name  
+  - band_name_id
+
+words_genres
+  #belongs_to :word
+  #belongs_to :genre
+
+  - id
+  - word_id
+  - genre_id
+
+band_name
+  #has_many :genres
+
+  - id
+  - name
+
+
+word
+
+id  string    genres
+--  ------    ------
+1   plastic   [rock, punk, hardcore, jam band]
+2   doctor    [rock, r&b, soul, punk, hardcore, jam band]
+
+
+Notes
+-----
+• User can select number of words that will form a band name
+• User can select a genre for the band name
+• Band name is created by combination of:
+    1. Selecting the submitted number of words (e.g. 2 words, 4 words)
+    2. Selecting at random words that are tagged with the submitted genre
+• On success, the newly created band name displays 
+• On success, user is invited to:
+    1. Share band name via Facebook, Twitter, text (if on mobile)
+    2. Create a new band name
+• On success, the newly created name is silently saved in the database
+    - Possible feature: Running list of recently created band names

@@ -1,0 +1,2 @@
+class WordGenre < ApplicationRecord
+end
