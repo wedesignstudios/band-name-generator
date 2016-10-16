@@ -14,15 +14,15 @@ ActiveRecord::Schema.define(version: 20161005234159) do
 
   create_table "band_names", force: :cascade do |t|
     t.string   "name"
+    t.integer  "genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "genres", force: :cascade do |t|
     t.string   "name"
-    t.integer  "band_name_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "words", force: :cascade do |t|
