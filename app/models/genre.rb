@@ -1,3 +1,3 @@
 class Genre < ApplicationRecord  
-  belongs_to :band_name
+  has_many :band_names
 end
