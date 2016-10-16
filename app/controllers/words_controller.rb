@@ -1,4 +1,5 @@
-class WordsController < ApplicationController  
+class WordsController < ApplicationController
+  before_action :set_word, only: [:edit, :update, :show]
 
   def index
     @words = Word.all
@@ -6,6 +7,12 @@ class WordsController < ApplicationController
 
   def new
     @word = Word.new
-  end  
+  end
+
+  private
+
+  def set_word
+    @word = Word.find(params[:id])
+  end
 
 end
