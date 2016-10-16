@@ -1,0 +1,21 @@
+<%= form_for @word do |f| %>
+  
+  <%= content_tag :div, class: "form-group row" do %>
+    <%= f.label "Word", class: "col-sm-2 col-form-label" %>
+    <%= content_tag :div, class: "col-sm-10" do %>
+      <%= f.text_field :string, class: "form-control" %>
+    <% end %>
+  <% end %>
+
+  <%= content_tag :div, class: "form-group row" do %>
+    <%= f.label "Article?", class: "col-sm-2 col-form-label" %>
+    <%= content_tag :div, class: "col-sm-10" do %>
+      <%= f.check_box :article, class: "form-control" %>
+    <% end %>
+  <% end %>
+
+  <%= content_tag :div, class: "form-group row" do %>
+    <%= f.submit class: "btn btn-primary" %>
+  <% end %>
+
+<% end %>
