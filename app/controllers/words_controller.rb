@@ -9,10 +9,19 @@ class WordsController < ApplicationController
     @word = Word.new
   end
 
+  def create    
+    word = Word.create(words_params)
+    redirect_to new_word_path, success: "Word successfully added."
+  end
+
   private
 
   def set_word
     @word = Word.find(params[:id])
+  end
+
+  def words_params
+    params.require(:word).permit(:string, :article)
   end
 
 end
