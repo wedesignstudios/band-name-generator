@@ -1,0 +1,5 @@
+<%= content_tag :ul do %>
+  <% @words.each do |word| %>
+    <%= content_tag :li, word.string %>        
+  <% end %>
+<% end %>
