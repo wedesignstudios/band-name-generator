@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161005234159) do
+ActiveRecord::Schema.define(version: 20161016211135) do
 
   create_table "band_names", force: :cascade do |t|
     t.string   "name"
@@ -27,8 +27,9 @@ ActiveRecord::Schema.define(version: 20161005234159) do
 
   create_table "words", force: :cascade do |t|
     t.string   "string"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.boolean  "article",    default: false
   end
 
 end
