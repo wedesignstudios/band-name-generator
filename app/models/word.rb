@@ -1,5 +1,5 @@
 class Word < ApplicationRecord
-  validates_uniquness_of :string
+  validates_uniqueness_of :string
 
   def self.build_band_name(number_of_words)
     band_name = []
