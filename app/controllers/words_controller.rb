@@ -10,8 +10,13 @@ class WordsController < ApplicationController
   end
 
   def create    
-    word = Word.create(words_params)
-    redirect_to new_word_path, success: "Word successfully added."
+    @word = Word.new(words_params)
+
+    if @word.save
+      redirect_to new_word_path, success: "Word successfully added."
+    else
+      render "new", error: "Unable to add word."
+    end
   end
 
   private
