@@ -2,12 +2,8 @@ class WordsController < ApplicationController
   before_action :set_word, only: [:edit, :update, :show]
 
   def index
-    @words = Word.all
-
-    respond_to do |format|
-      format.html
-      format.json {render json: @words}
-    end 
+    words = Word.all
+    render json: words    
   end
 
   def new
