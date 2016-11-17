@@ -12,11 +12,12 @@ class WordsController < ApplicationController
 
   def create    
     @word = Word.new(words_params)
+    @word.string = @word.string.titleize   
 
     if @word.save
-      redirect_to new_word_path, success: "Word successfully added."
+      redirect_to new_word_path, flash: {success: "Word successfully added."}
     else
-      render "new", error: "Unable to add word."
+      redirect_to new_word_path, flash: {error: "Unable to add word. " + @word.errors.full_messages.to_sentence + "."}
     end
   end
 
