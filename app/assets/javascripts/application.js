@@ -12,4 +12,8 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require tether
+//= require bootstrap
+//= require angular
+//= require angular-rails-templates
 //= require_tree .
