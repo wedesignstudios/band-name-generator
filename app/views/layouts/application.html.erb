@@ -9,10 +9,13 @@
     
   </head>
 
-  <body>
+  <body ng-app="app">
     <div class="container">
       <%= render 'layouts/notices' %>
-      <%= yield %>
+      <%#= yield %>
+
+      <ui-view></ui-view>
+
     </div>    
   </body>
 </html>
