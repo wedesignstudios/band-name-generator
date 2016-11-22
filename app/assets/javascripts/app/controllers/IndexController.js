@@ -13,7 +13,7 @@ function IndexController(WordService) {
       .then(function(response) {
         var i = 0
         while (i++ < numOfWords) {
-          var randomWordIndex = ctrl.getRandomInt(0, response.data.words.length);
+          var randomWordIndex = ctrl.getRandomInt(0, response.data.words.length-1);
           ctrl.bandWords.push(response.data.words[randomWordIndex].string);
         }        
         ctrl.bandName = ctrl.bandWords.join(' ');
