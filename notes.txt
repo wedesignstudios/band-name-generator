@@ -53,3 +53,10 @@ Notes
     2. Create a new band name
 • On success, the newly created name is silently saved in the database
     - Possible feature: Running list of recently created band names
+
+Documentations
+--------------
+• gem 'bootstrap-slider-rails'
+    - https://github.com/seiyria/bootstrap-slider
+    - https://github.com/YourCursus/bootstrap-slider-rails
+    - http://seiyria.com/bootstrap-slider/
