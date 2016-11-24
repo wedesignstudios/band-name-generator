@@ -4,6 +4,17 @@ function IndexController(WordService, GenreService) {
   ctrl.bandWords = [];
   ctrl.bandName = '';
   ctrl.genres = [];
+  
+  ctrl.slider = new Slider('#band-name-length', {
+      ticks: [1, 2, 3],
+      ticks_labels: ['Small', 'Medium', 'Large'],
+      tooltip: "hide",
+      value: 1,
+      formatter: function(value) {
+        ctrl.numberOfWords = value;
+        // return ctrl.numberOfWords;
+      }
+    });
 
   ctrl.getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -29,7 +40,9 @@ function IndexController(WordService, GenreService) {
       });
   }
 
-  ctrl.getGenreNames();  
+  ctrl.getGenreNames(); 
+
+
 
 }
 
