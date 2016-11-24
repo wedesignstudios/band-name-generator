@@ -6,12 +6,21 @@
 
 <div class="row">
   <form>
+
+    <div class="col-xs">      
+      <div ng-repeat="genre in vm_index.genres">
+        <select class="form-control my-1">
+          <option ng-repeat="(key, value) in genre">{{ value.name }}</option>
+        </select>
+      </div>
+    </div>    
+
     <div class="col-xs">  
-      <input class="form-control" type="number" ng-model="vm_index.numberOfWords">
+      <input class="form-control my-1" type="number" ng-model="vm_index.numberOfWords">
     </div>    
 
     <div class="col-xs">
-      <button type="button" class="btn btn-secondary my-1" ng-click="vm_index.getBandName(vm_index.numberOfWords)">Get Band Name</button>   
+      <button type="button" class="form-control btn btn-secondary my-1" ng-click="vm_index.getBandName(vm_index.numberOfWords)">Get Band Name</button>   
     </div>
 
   </form>
