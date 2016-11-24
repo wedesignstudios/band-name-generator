@@ -1,8 +1,9 @@
-function IndexController(WordService) {
+function IndexController(WordService, GenreService) {
   var ctrl = this;
 
   ctrl.bandWords = [];
   ctrl.bandName = '';
+  ctrl.genres = [];
 
   ctrl.getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -20,6 +21,15 @@ function IndexController(WordService) {
         ctrl.bandWords = [];
       });
   }
+
+  ctrl.getGenreNames = function() {
+    GenreService.getGenres()
+      .then(function(response) {        
+        ctrl.genres.push(response.data.genres);
+      });
+  }
+
+  ctrl.getGenreNames();  
 
 }
 
