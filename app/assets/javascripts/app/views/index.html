@@ -5,7 +5,14 @@
 </div>
 
 <div class="row">
-  <div class="col-xs">
-    <button type="button" class="btn btn-secondary my-1" ng-click="vm_index.getBandName(2)">Get Band Name</button>   
-  </div>
+  <form>
+    <div class="col-xs">  
+      <input class="form-control" type="number" ng-model="vm_index.numberOfWords">
+    </div>    
+
+    <div class="col-xs">
+      <button type="button" class="btn btn-secondary my-1" ng-click="vm_index.getBandName(vm_index.numberOfWords)">Get Band Name</button>   
+    </div>
+
+  </form>
 </div>
