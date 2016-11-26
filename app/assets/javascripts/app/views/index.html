@@ -9,20 +9,20 @@
 
     <div class="col-xs">      
       <div ng-repeat="genre in vm_index.genres">
-        <select class="form-control my-1">
-          <option selected>Choose a genre:</option>
+        <select class="form-control my-1" ng-model="vm_index.genre">
+          <option value="" disabled selected>Choose a genre:</option>
           <option ng-repeat="(key, value) in genre">{{ value.name }}</option>
         </select>
       </div>
-    </div>    
+    </div>             
 
     <div class="col-xs">
-      <input id="band-name-length" class="form-control my-1" type="text" >
-    </div>    
+      <input id="band-name-length" class="form-control my-1" type="text" ng-model="vm_index.numberOfWords">
+    </div>     
 
     <div class="col-xs">
       <button type="button" class="form-control btn btn-secondary my-1" ng-click="vm_index.getBandName(vm_index.numberOfWords)">Get Band Name</button>   
-    </div>
+    </div>    
 
   </form>
 </div>
