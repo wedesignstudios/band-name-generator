@@ -1,3 +1,3 @@
 class WordSerializer < ActiveModel::Serializer
-  attributes :id, :string, :article
+  attributes :id, :string, :begins_with_word
 end

@@ -28,7 +28,7 @@ class WordsController < ApplicationController
   end
 
   def words_params
-    params.require(:word).permit(:string, :article)
+    params.require(:word).permit(:string, :begins_with_word)
   end
 
 end

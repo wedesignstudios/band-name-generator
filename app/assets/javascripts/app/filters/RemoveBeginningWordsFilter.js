@@ -1,9 +1,9 @@
-function removeArticlesFilter() {
+function removeBeginningWordsFilter() {
     return function(items, bool) {
       var filtered = [];
 
       items.forEach(function(item) {
-        if (item.article === bool) {
+        if (item.begins_with_word === bool) {
           filtered.push(item);
         }
       });
@@ -15,4 +15,4 @@ function removeArticlesFilter() {
 
 angular
   .module('app')
-  .filter('removeArticlesFilter', removeArticlesFilter);
+  .filter('removeBeginningWordsFilter', removeBeginningWordsFilter);
