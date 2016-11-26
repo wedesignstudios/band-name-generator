@@ -23,7 +23,7 @@ function IndexController($filter, WordService, GenreService) {
     WordService.getWords()
       .then(function(response) {
 
-        var words = $filter('removeArticlesFilter')(response.data.words, false);
+        var words = $filter('removeBeginningWordsFilter')(response.data.words, false);
         var i = 0
 
         while (i++ < numOfWords) {
@@ -43,10 +43,16 @@ function IndexController($filter, WordService, GenreService) {
       });
   }
 
+  ctrl.getBeginningWords = function() {
+    WordService.getWords()
+      .then(function(response) {
+        var beginningWords = $filter('removeBeginningWordsFilter')(response.data.words, true);
+        ctrl.beginningWords = beginningWords;        
+      });
+  }
+
   ctrl.getGenreNames(); 
-
-
-
+  ctrl.getBeginningWords();  
 }
 
 angular
