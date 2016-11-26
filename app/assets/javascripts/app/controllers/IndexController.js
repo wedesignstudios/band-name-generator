@@ -13,28 +13,7 @@ function IndexController($filter, WordService, GenreService) {
       formatter: function(value) {
         ctrl.numberOfWords = value;     
       }
-    });   
-
-  ctrl.getRandomInt = function(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-  }
-
-  ctrl.getBandName = function(numOfWords) {
-    WordService.getWords()
-      .then(function(response) {
-
-        var words = $filter('removeBeginningWordsFilter')(response.data.words, false);
-        var i = 0
-
-        while (i++ < numOfWords) {
-          var randomWordIndex = ctrl.getRandomInt(0, words.length-1);
-          ctrl.bandWords.push(words[randomWordIndex].string);
-        }
-                
-        ctrl.bandName = ctrl.bandWords.join(' ');
-        ctrl.bandWords = [];
-      });
-  }
+    });  
 
   ctrl.getGenreNames = function() {
     GenreService.getGenres()
@@ -51,8 +30,43 @@ function IndexController($filter, WordService, GenreService) {
       });
   }
 
+  ctrl.setBeginningWords = function() {
+    if (ctrl.beginsWith != undefined && ctrl.beginsWith != '') {
+      ctrl.bandWords.push(ctrl.beginsWith);
+      console.log("Beginning word: " + ctrl.beginsWith);
+    }
+  }
+
+  ctrl.setBandWords = function(numOfWords) {
+    WordService.getWords()
+      .then(function(response) {
+
+        var words = $filter('removeBeginningWordsFilter')(response.data.words, false);
+        var i = 0
+
+        while (i++ < numOfWords) {
+          var randomWordIndex = ctrl.getRandomInt(0, words.length-1);
+          ctrl.bandWords.push(words[randomWordIndex].string);
+        }
+                
+        ctrl.bandName = ctrl.bandWords.join(' ');
+        ctrl.bandWords = [];
+
+      });
+  }
+
+  ctrl.getRandomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+  }
+
+  ctrl.getBandName = function(numOfWords) {
+    ctrl.setBeginningWords();
+    ctrl.setBandWords(numOfWords);    
+  }
+
   ctrl.getGenreNames(); 
-  ctrl.getBeginningWords();  
+  ctrl.getBeginningWords();
+
 }
 
 angular
