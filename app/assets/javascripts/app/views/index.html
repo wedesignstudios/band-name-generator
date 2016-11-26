@@ -21,14 +21,16 @@
     </div>     
 
     <div class="col-xs">
-      <button type="button" class="form-control btn btn-secondary my-1" ng-click="vm_index.getBandName(vm_index.numberOfWords)">Get Band Name</button>   
-    </div> 
+        <select class="form-control my-1" ng-model="vm_index.beginsWith">
+          <option value="" disabled selected>Choose a beginning word: </option>   
+          <option value="">No beginning word</option>   
+          <option ng-repeat="word in vm_index.beginningWords  | orderBy : 'string' " value="{{ word.string }}">{{ word.string }}</option>         
+        </select>        
+    </div>    
 
     <div class="col-xs">
-      <div ng-repeat="word in vm_index.beginningWords  | orderBy : 'string' ">
-        {{ word.string }}
-      </div>
-    </div>
+      <button type="button" class="form-control btn btn-secondary my-1" ng-click="vm_index.getBandName(vm_index.numberOfWords)">Get Band Name</button>   
+    </div> 
 
   </form>
 </div>
