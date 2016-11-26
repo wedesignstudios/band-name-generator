@@ -11,10 +11,9 @@ function IndexController(WordService, GenreService) {
       tooltip: "hide",
       value: 1,
       formatter: function(value) {
-        ctrl.numberOfWords = value;
-        // return ctrl.numberOfWords;
+        ctrl.numberOfWords = value;     
       }
-    });
+    });   
 
   ctrl.getRandomInt = function(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
