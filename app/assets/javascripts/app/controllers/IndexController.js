@@ -1,8 +1,7 @@
-function IndexController($filter, WordService, GenreService) {
+function IndexController($filter, WordService, GenreService, BandNameService) {
   var ctrl = this;
 
-  ctrl.bandWords = [];
-  ctrl.bandName = '';
+  ctrl.bandWords = [];  
   ctrl.genres = [];  
   
   ctrl.slider = new Slider('#band-name-length', {
@@ -32,9 +31,12 @@ function IndexController($filter, WordService, GenreService) {
 
   ctrl.setBeginningWords = function() {
     if (ctrl.beginsWith != undefined && ctrl.beginsWith != '') {
-      ctrl.bandWords.push(ctrl.beginsWith);
-      console.log("Beginning word: " + ctrl.beginsWith);
+      ctrl.bandWords.push(ctrl.beginsWith);      
     }
+  }
+
+  ctrl.getRandomInt = function(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   ctrl.setBandWords = function(numOfWords) {
@@ -50,18 +52,26 @@ function IndexController($filter, WordService, GenreService) {
         }
                 
         ctrl.bandName = ctrl.bandWords.join(' ');
+        ctrl.saveBandName();
         ctrl.bandWords = [];
 
       });
   }
 
-  ctrl.getRandomInt = function(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
+  ctrl.saveBandName = function() {
+    var data = { 
+      band_name: {
+        name: ctrl.bandName,
+        genre_id: parseInt(ctrl.genre)
+      },
+    };
+
+    BandNameService.postBandName(data);    
   }
 
   ctrl.getBandName = function(numOfWords) {
     ctrl.setBeginningWords();
-    ctrl.setBandWords(numOfWords);    
+    ctrl.setBandWords(numOfWords);        
   }
 
   ctrl.getGenreNames(); 
