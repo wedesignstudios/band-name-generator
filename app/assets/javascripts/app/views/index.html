@@ -11,7 +11,7 @@
       <div ng-repeat="genre in vm_index.genres">
         <select class="form-control my-1" ng-model="vm_index.genre">
           <option value="" disabled selected>Choose a genre:</option>
-          <option ng-repeat="(key, value) in genre">{{ value.name }}</option>
+          <option ng-repeat="(key, value) in genre" value="{{ value.id }}">{{ value.name }}</option>
         </select>
       </div>
     </div>             
