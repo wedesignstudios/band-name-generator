@@ -45,8 +45,9 @@ Notes
 • User can select number of words that will form a band name
 • User can select a genre for the band name
 • Band name is created by combination of:
-    1. Selecting the submitted number of words (e.g. 2 words, 4 words)
-    2. Selecting at random words that are tagged with the submitted genre
+    1. Selecting the submitted number of words (e.g. 2 words, 3 words)
+    2. Selecting a beginning word (e.g. "The", "A", "Of") or not
+    2. Selecting at random the number of words desired
 • On success, the newly created band name displays 
 • On success, user is invited to:
     1. Share band name via Facebook, Twitter, text (if on mobile)
