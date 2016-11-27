@@ -11,8 +11,7 @@ class BandNameController < ApplicationController
   end
 
   def create
-    band_name = BandName.create(band_name_params)
-    redirect_to band_name_path(band_name)
+    band_name = BandName.create(band_name_params)    
   end
 
   private
