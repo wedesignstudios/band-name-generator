@@ -5,7 +5,9 @@
 </div>
 
 <div class="row">
-  <div class="col-xs">
-    <ui-view id="form-views"></ui-view>
-  </div>
+  <form id="name-builder" ng-submit="vm_form.getBandName()">
+    <div class="col-xs">      
+      <ui-view id="form-views"></ui-view>
+    </div>
+  </form>
 </div>
