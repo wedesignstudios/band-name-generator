@@ -1,6 +1,6 @@
 <div class="form-group row">
   <div ng-repeat="genre in vm_form.genres">
-    <select class="form-control my-1" ng-model="vm_form.genre">
+    <select class="form-control my-1" ng-model="vm_form.formData.genre_id">
       <option value="" disabled selected>Choose a genre:</option>
       <option ng-repeat="(key, value) in genre" value="{{ value.id }}">{{ value.name }}</option>
     </select>
