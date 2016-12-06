@@ -5,9 +5,17 @@
 </div>
 
 <div class="row">
-  <form id="name-builder" ng-submit="vm_form.getBandName()">
+  <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)">
     <div class="col-xs">      
       <ui-view id="form-views"></ui-view>
     </div>
   </form>
+</div>
+
+<div class="row">
+  <pre>{{ vm_form.formData }}</pre>
+</div>
+
+<div class="row">
+  <h3 ng-bind="vm_form.bandName"></h3>
 </div>
