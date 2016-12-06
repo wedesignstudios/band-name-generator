@@ -1,1 +1,11 @@
-name-builder-start-word.html
+<div class="row">
+  <div class="col-xs">
+    <select class="form-control my-1" ng-model="vm_form.formData.beginsWith">
+      <option value="" disabled selected>Choose a beginning word: </option>   
+      <option value="">No beginning word</option>   
+      <option ng-repeat="word in vm_form.beginningWords  | orderBy : 'string' " value="{{ word.string }}">{{ word.string }}</option>         
+    </select>
+  </div>
+</div>
+
+<button type="submit" class="form-control btn btn-secondary my-1">Get Band Name</button>
