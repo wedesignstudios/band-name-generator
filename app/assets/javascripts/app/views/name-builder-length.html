@@ -1,10 +1,8 @@
-<p>Number of words: {{ vm_form.numberOfWords }}</p>
-
-<div class="name-builder-length-container">
+<div class="name-builder-length-container row">
   <div class="radio-tile-group">
 
     <div class="input-container">
-      <input id="short" class="radio-button" type="radio" name="radio" value="1" ng-model="vm_form.numberOfWords" />
+      <input id="short" class="radio-button" type="radio" name="radio" value="1" ng-model="vm_form.formData.words" />
       <div class="radio-tile">
         <div class="icon short-icon">
           <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -17,7 +15,7 @@
     </div>
 
     <div class="input-container">
-      <input id="medium" class="radio-button" type="radio" name="radio" value="2" ng-model="vm_form.numberOfWords" />
+      <input id="medium" class="radio-button" type="radio" name="radio" value="2" ng-model="vm_form.formData.words" />
       <div class="radio-tile">
         <div class="icon medium-icon">
           <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
@@ -30,7 +28,7 @@
     </div>
 
     <div class="input-container">
-      <input id="long" class="radio-button" type="radio" name="radio" value="3" ng-model="vm_form.numberOfWords" />
+      <input id="long" class="radio-button" type="radio" name="radio" value="3" ng-model="vm_form.formData.words" />
       <div class="radio-tile">
         <div class="icon long-icon">
           <svg fill="#000000" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
