@@ -23,5 +23,10 @@ angular
           .state('form.start-word', {
               url: '/start-word',
               templateUrl: 'app/views/name-builder-start-word.html'
+          })
+          .state('name', {
+              url: '/band-name',
+              templateUrl: 'app/views/band-name.html',
+              controller: 'NameController as vm_name'
           });      
   });
