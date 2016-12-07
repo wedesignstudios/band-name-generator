@@ -1,9 +1,10 @@
-function FormController($filter, WordService, GenreService, BandNameService) {
+function FormController($window, $filter, WordService, GenreService, BandNameService, ShareBandNameService) {
   var ctrl = this;
 
   ctrl.formData = {};
   ctrl.genres = [];
-  ctrl.bandWords = []; 
+  ctrl.bandWords = [];
+  ctrl.bandName = ShareBandNameService;
 
   ctrl.getGenreNames = function() {
     GenreService.getGenres()
@@ -42,7 +43,7 @@ function FormController($filter, WordService, GenreService, BandNameService) {
           ctrl.bandWords.push(words[randomWordIndex].string);
         }
                 
-        ctrl.bandName = ctrl.bandWords.join(' ');
+        ctrl.bandName.name = ctrl.bandWords.join(' ');        
         ctrl.saveBandName();
         ctrl.bandWords = [];
 
@@ -52,20 +53,22 @@ function FormController($filter, WordService, GenreService, BandNameService) {
   ctrl.saveBandName = function() {
     var data = { 
       band_name: {
-        name: ctrl.bandName,
+        name: ctrl.bandName.name,
         genre_id: parseInt(ctrl.formData.genre_id)
       },
     };
     BandNameService.postBandName(data);    
-  }
+  }  
 
   ctrl.getBandName = function(numOfWords) {
     ctrl.setBeginningWords();
-    ctrl.setBandWords(numOfWords);        
+    ctrl.setBandWords(numOfWords);
+    $window.location.href = '/#/band-name';
   }
 
   ctrl.getGenreNames();
-  ctrl.getBeginningWords();
+  ctrl.getBeginningWords();   
+
 }
 
 angular
