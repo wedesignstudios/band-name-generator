@@ -1,4 +1,9 @@
-function NameController() {
+function NameController($window, ShareBandNameService) {
+  var ctrl = this;
+
+  ctrl.bandName = ShareBandNameService;   
+
+  console.log($window.location.href); 
   
 }
 
