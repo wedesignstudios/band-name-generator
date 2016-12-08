@@ -1,6 +1,13 @@
 <div class="row">
   <div class="col-xs">
     <h3 class="my-1">Let's Build Your Band Name!</h3>
+
+    <div id="status-buttons" class="text-center">
+      <a ui-sref-active="active" ui-sref="form.genre"><span>1</span> Genre</a>
+      <a ui-sref-active="active" ui-sref="form.length"><span>2</span> Length</a>
+      <a ui-sref-active="active" ui-sref="form.start-word"><span>3</span> Start Word</a>
+    </div>
+
   </div>
 </div>
 
@@ -13,9 +20,13 @@
 </div>
 
 <div class="row">
-  <pre>{{ vm_form.formData }}</pre>
+  <div class="col-xs">
+    <pre>{{ vm_form.formData }}</pre>
+  </div>
 </div>
 
 <div class="row">
-  <h3 ng-bind="vm_form.bandName.name"></h3>
+  <div class="col-xs">
+    <h3 ng-bind="vm_form.bandName.name"></h3>
+  </div>
 </div>
