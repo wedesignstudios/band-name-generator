@@ -1,5 +1,5 @@
 function ShareBandNameService() {
-  return {name: ''};
+  return {name: '', genre_id: ''};
 }
 
 angular
