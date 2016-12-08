@@ -42,28 +42,32 @@ function FormController($window, $filter, WordService, GenreService, BandNameSer
           var randomWordIndex = ctrl.getRandomInt(0, words.length-1);
           ctrl.bandWords.push(words[randomWordIndex].string);
         }
-                
-        ctrl.bandName.name = ctrl.bandWords.join(' ');        
+
+        ctrl.bandName.name = ctrl.bandWords.join(' ');
         ctrl.saveBandName();
         ctrl.bandWords = [];
-
       });
+  }
+
+  ctrl.setBandGenre = function() {
+    ctrl.bandName.genre_id = ctrl.formData.genre_id;
   }
 
   ctrl.saveBandName = function() {
     var data = { 
       band_name: {
         name: ctrl.bandName.name,
-        genre_id: parseInt(ctrl.formData.genre_id)
+        genre_id: parseInt(ctrl.bandName.genre_id)
       },
     };
     BandNameService.postBandName(data);    
   }  
 
   ctrl.getBandName = function(numOfWords) {
+    ctrl.setBandGenre();    
     ctrl.setBeginningWords();
     ctrl.setBandWords(numOfWords);
-    $window.location.href = '/#/band-name';
+    $window.location.href = '/#/band-name';    
   }
 
   ctrl.getGenreNames();
