@@ -1,32 +1,23 @@
-<div class="row">
-  <div class="col-xs">
+<div class="row flex-row-full-height">
+  
+  <div class="col-xs flex-xs-top text-xs-center">
     <h3 class="my-1">Let's Build Your Band Name!</h3>
-
     <div id="status-buttons" class="text-center">
       <a ui-sref-active="active" ui-sref="form.genre"><span>1</span> Genre</a>
       <a ui-sref-active="active" ui-sref="form.length"><span>2</span> Length</a>
       <a ui-sref-active="active" ui-sref="form.start-word"><span>3</span> Start Word</a>
-    </div>
-
+    </div>    
   </div>
-</div>
+  
+  <div class="col-xs-12 flex-xs-middle text-xs-center">      
+    <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)">
+    <ui-view id="form-views"></ui-view>
+    </form>
+  </div>
 
-<div class="row">
-  <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)">
-    <div class="col-xs">      
-      <ui-view id="form-views"></ui-view>
-    </div>
-  </form>
-</div>
-
-<div class="row">
-  <div class="col-xs">
+  <div class="col-xs-12">
     <pre>{{ vm_form.formData }}</pre>
-  </div>
-</div>
-
-<div class="row">
-  <div class="col-xs">
     <h3 ng-bind="vm_form.bandName.name"></h3>
-  </div>
+  </div> 
+
 </div>
