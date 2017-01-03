@@ -17,7 +17,7 @@ function FormController($window, $filter, WordService, GenreService, BandNameSer
     WordService.getWords()
       .then(function(response) {
         var beginningWords = $filter('removeBeginningWordsFilter')(response.data.words, true);
-        ctrl.beginningWords = beginningWords;        
+        ctrl.beginningWords = $filter('editBeginningWordsFilter')(beginningWords, ['The', 'By', 'Of', 'That', 'This', 'In']);
       });
   }
 
