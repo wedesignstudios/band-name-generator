@@ -28,5 +28,9 @@ angular
               url: '/band-name',
               templateUrl: 'app/views/band-name.html',
               controller: 'NameController as vm_name'
+          })
+          .state('otherwise', {
+              url: '*path',
+              templateUrl: 'app/views/index.html'
           });      
   });
