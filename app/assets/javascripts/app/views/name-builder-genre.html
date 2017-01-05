@@ -5,4 +5,4 @@
   </select>
 </div>
 
-<a ui-sref="form.length" class="btn btn-secondary">Next</a>
+<a ui-sref="form.length" class="btn btn-secondary" ng-if="!(vm_form.formData | checkIfObjectIsEmptyFilter)">Next</a>
