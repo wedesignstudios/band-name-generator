@@ -7,5 +7,5 @@
 <a ui-sref="form.length" class="btn btn-secondary">Prev</a>
 
 <div>
-  <button type="submit" class="btn btn-secondary my-1">Get Band Name</button>
+  <button type="submit" class="btn btn-secondary my-1" ng-if="vm_form.formData.hasOwnProperty('beginsWith')">Get Band Name</button>
 </div>

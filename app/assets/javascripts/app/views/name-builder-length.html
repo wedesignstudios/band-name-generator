@@ -45,4 +45,4 @@
 </div>
   
 <a ui-sref="form.genre" class="btn btn-secondary">Prev</a>  
-<a ui-sref="form.start-word" class="btn btn-secondary">Next</a>
+<a ui-sref="form.start-word" class="btn btn-secondary" ng-if="vm_form.formData.hasOwnProperty('words')">Next</a>
