@@ -1,7 +1,7 @@
-function FormController($window, $filter, WordService, GenreService, BandNameService, ShareBandNameService) {
+function FormController($window, $filter, FormDataService, WordService, GenreService, BandNameService, ShareBandNameService) {
   var ctrl = this;
 
-  ctrl.formData = {};
+  ctrl.formData = FormDataService.formData;
   ctrl.genres = [];
   ctrl.bandWords = [];
   ctrl.bandName = ShareBandNameService;
