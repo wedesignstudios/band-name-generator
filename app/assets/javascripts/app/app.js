@@ -43,7 +43,18 @@ angular
           .state('name', {
               url: '/band-name',
               templateUrl: 'app/views/band-name.html',
-              controller: 'NameController as vm_name'
+              controller: 'NameController as vm_name',
+              data: {
+                redirect: ['FormDataService', function(FormDataService) {
+                    if (!FormDataService.formData.genre_id) {
+                      return 'form.genre';
+                    } else if (!FormDataService.formData.words) {
+                      return 'form.length';
+                    } else if (!FormDataService.formData.beginsWith && FormDataService.formData.beginsWith != '') {
+                      return 'form.start-word';
+                    }
+                }]                
+              }
           })
           .state('otherwise', {
               url: '*path',
