@@ -14,15 +14,31 @@ angular
           })
           .state('form.genre', {
               url: '/genre',
-              templateUrl: 'app/views/name-builder-genre.html'
+              templateUrl: 'app/views/name-builder-genre.html',              
           })
           .state('form.length', {
               url: '/length',
-              templateUrl: 'app/views/name-builder-length.html'
+              templateUrl: 'app/views/name-builder-length.html',
+              data: {
+                redirect: ['FormDataService', function(FormDataService) {
+                    if (!FormDataService.formData.genre_id) {
+                      return 'form.genre';
+                    }
+                }]
+              }
           })
           .state('form.start-word', {
               url: '/start-word',
-              templateUrl: 'app/views/name-builder-start-word.html'
+              templateUrl: 'app/views/name-builder-start-word.html',
+              data: {
+                redirect: ['FormDataService', function(FormDataService) {
+                    if (!FormDataService.formData.genre_id) {
+                      return 'form.genre';
+                    } else if (!FormDataService.formData.words) {
+                      return 'form.length';
+                    }
+                }]
+              }
           })
           .state('name', {
               url: '/band-name',
@@ -33,4 +49,15 @@ angular
               url: '*path',
               templateUrl: 'app/views/index.html'
           });      
+  })
+    .run(function($rootScope, $state, $injector) {
+        $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+          if (toState.data && toState.data.redirect) {            
+            var redirect = $injector.invoke(toState.data.redirect);
+            if (redirect) {              
+              event.preventDefault();
+              $state.go(redirect);              
+            }
+          }
+        })
   });
