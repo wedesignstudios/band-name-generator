@@ -67,7 +67,10 @@ angular
           })
           .state('otherwise', {
               url: '*path',
-              templateUrl: 'app/views/index.html'
+              templateUrl: 'app/views/index.html',
+              data: {
+                bodyClass: 'bg-index'
+              } 
           });      
   })
     .run(function($rootScope, $state, $injector) {
@@ -80,6 +83,5 @@ angular
             }
           }
         });
-        $rootScope.$state = $state;
-        console.log($state)
+        $rootScope.$state = $state;        
   });
