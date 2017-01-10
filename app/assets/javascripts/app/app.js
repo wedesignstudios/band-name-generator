@@ -5,7 +5,10 @@ angular
           .state('index', {
               url: '/',
               templateUrl: 'app/views/index.html',
-              controller: 'IndexController as vm_index'              
+              controller: 'IndexController as vm_index',
+              data: {
+                bodyClass: 'bg-index'
+              }                            
           })
           .state('form', {
               url: '/name-builder',
