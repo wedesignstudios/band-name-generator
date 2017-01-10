@@ -14,7 +14,10 @@ angular
           })
           .state('form.genre', {
               url: '/genre',
-              templateUrl: 'app/views/name-builder-genre.html',              
+              templateUrl: 'app/views/name-builder-genre.html',
+              data: {
+                bodyClass: 'bg-genre'
+              }              
           })
           .state('form.length', {
               url: '/length',
@@ -24,7 +27,8 @@ angular
                     if (!FormDataService.formData.genre_id) {
                       return 'form.genre';
                     }
-                }]
+                }],
+                bodyClass: 'bg-length'
               }
           })
           .state('form.start-word', {
@@ -37,7 +41,8 @@ angular
                     } else if (!FormDataService.formData.words) {
                       return 'form.length';
                     }
-                }]
+                }],
+                bodyClass: 'bg-start-word'
               }
           })
           .state('name', {
@@ -53,7 +58,8 @@ angular
                     } else if (!FormDataService.formData.beginsWith && FormDataService.formData.beginsWith != '') {
                       return 'form.start-word';
                     }
-                }]                
+                }],
+                bodyClass: 'bg-band-name'                
               }
           })
           .state('otherwise', {
@@ -70,5 +76,7 @@ angular
               $state.go(redirect);              
             }
           }
-        })
+        });
+        $rootScope.$state = $state;
+        console.log($state)
   });
