@@ -5,3 +5,20 @@
 #status-buttons a.active {
   color: red;
 }
+
+// Body background colors depending on $state
+.bg-index, .bg-band-name {
+  background: $black;
+}
+
+.bg-genre {
+  background: $carnation;
+}
+
+.bg-length {
+  background: $ronchi;  
+}
+
+.bg-start-word {
+  background: $cornflower;
+}
