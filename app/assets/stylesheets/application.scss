@@ -24,6 +24,26 @@
     box-sizing: border-box;  
   }
 
+  body {
+    color: $white;
+  }
+
   .flex-row-full-height {    
     height: 100vh;    
   }
+
+
+  .btn {
+    border-radius: 0;
+  }
+
+  .btn-banderoo {
+    color: $white;
+    background-color: $carnation;
+    border-color: transparent;
+    text-transform: uppercase;
+  }
+  
+  a.btn-banderoo:hover {
+    color: $white;
+  }  
