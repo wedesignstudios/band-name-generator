@@ -1,4 +1,4 @@
-function NameController($window, ShareBandNameService, FormDataService) {
+function NameController($window, ShareBandNameService, FormDataService, SocialMediaShareService) {
   var ctrl = this;
 
   ctrl.bandName = ShareBandNameService;
@@ -8,7 +8,11 @@ function NameController($window, ShareBandNameService, FormDataService) {
     ctrl.bandName.genre_id = '';
     FormDataService.formData = {};    
   }
-  
+
+  SocialMediaShareService.fbSDK;  
+
+  ctrl.fbFeed = SocialMediaShareService.fbFeed;
+
 }
 
 angular
