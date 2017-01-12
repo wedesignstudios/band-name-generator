@@ -2,4 +2,5 @@
   <h1 class="my-1" ng-bind="vm_name.bandName.name"></h1>
   <h1 class="my-1" ng-bind="vm_name.bandName.genre_id"></h1>
   <a ui-sref="form.genre" class="btn btn-info my-1" ng-click="vm_name.resetBandName()">Get Another Band Name</a>    
+  <div ng-click="vm_name.fbFeed(vm_name.bandName.name)">FB Feed</div>
 </div>
