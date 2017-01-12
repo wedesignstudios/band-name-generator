@@ -9,10 +9,15 @@ function NameController($window, ShareBandNameService, FormDataService, SocialMe
     FormDataService.formData = {};    
   }
 
-  SocialMediaShareService.fbSDK;  
-
+  ctrl.twtrBandName = () => {
+    return ctrl.bandName.name.replace(/\s/g, '+');    
+  }
+  
   ctrl.fbFeed = SocialMediaShareService.fbFeed;
+  ctrl.twtrTweet = SocialMediaShareService.twtrTweet;
 
+  SocialMediaShareService.fbSDK;
+  
 }
 
 angular
