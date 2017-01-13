@@ -1,7 +1,18 @@
-function NameController($window, ShareBandNameService, FormDataService, SocialMediaShareService) {
+function NameController($window, $timeout, ShareBandNameService, FormDataService, SocialMediaShareService) {
   var ctrl = this;
 
+  ctrl.loadingPage = true;
   ctrl.bandName = ShareBandNameService;
+
+  ctrl.removeBodyClass = (className) => {
+    let body = angular.element(document.querySelector('body'));
+    body.removeClass(className);    
+  }
+
+  ctrl.hideLoadingPage = () => {
+    ctrl.removeBodyClass('bg-loading');
+    ctrl.loadingPage = false;
+  }
 
   ctrl.resetBandName = function() {
     ctrl.bandName.name = '';
@@ -17,6 +28,8 @@ function NameController($window, ShareBandNameService, FormDataService, SocialMe
   ctrl.twtrTweet = SocialMediaShareService.twtrTweet;
 
   SocialMediaShareService.fbSDK;
+
+  $timeout(ctrl.hideLoadingPage, 3000);   
   
 }
 
