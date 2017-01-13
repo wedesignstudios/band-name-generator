@@ -1,7 +1,7 @@
 function GenreService($http) {
 
   this.getGenres = function() {
-    return $http.get('http://localhost:3000/genres');
+    return $http.get('/genres');
   }
 
 }
