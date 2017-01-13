@@ -62,7 +62,7 @@ angular
                       return 'form.start-word';
                     }
                 }],
-                bodyClass: 'bg-band-name'                
+                bodyClass: 'bg-band-name bg-loading'                
               }
           })
           .state('otherwise', {
@@ -83,5 +83,5 @@ angular
             }
           }
         });
-        $rootScope.$state = $state;        
+        $rootScope.$state = $state;
   });
