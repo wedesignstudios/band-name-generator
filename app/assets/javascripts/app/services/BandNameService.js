@@ -1,7 +1,7 @@
 function BandNameService($http) {
 
   this.postBandName = function(data) {
-    return  $http.post('http://localhost:3000/band_name', data);
+    return  $http.post('/band_name', data);
   }
 }
 
