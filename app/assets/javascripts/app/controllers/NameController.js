@@ -10,7 +10,7 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
   }
 
   ctrl.hideLoadingPage = () => {
-    ctrl.removeBodyClass('bg-loading');
+    ctrl.removeBodyClass('bg-color-loading');
     ctrl.loadingPage = false;
   }
 
