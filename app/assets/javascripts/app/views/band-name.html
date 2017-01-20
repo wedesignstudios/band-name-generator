@@ -1,17 +1,19 @@
 <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 
-<div class="col-xs flex-xs-middle text-xs-center" ng-if="vm_name.loadingPage">
+<div class="row flex-row-full-height">
+  <div class="col-xs flex-xs-middle text-xs-center" ng-if="vm_name.loadingPage">
 
-  <h1>Hang Tight.</h1>
-  <h1>We're Making Magic.</h1>
-  <h3>(And your band name!)</h3>
+    <h1>Hang Tight.</h1>
+    <h1>We're Making Magic.</h1>
+    <h3>(And your band name!)</h3>
 
-</div>
+  </div>
 
-<div class="col-xs flex-xs-middle text-xs-center" ng-if="!vm_name.loadingPage"> 
-  <h1 class="my-1" ng-bind="vm_name.bandName.name"></h1>
-  <h1 class="my-1" ng-bind="vm_name.bandName.genre_id"></h1>
-  <a ui-sref="form.genre" class="btn btn-info my-1" ng-click="vm_name.resetBandName()">Get Another Band Name</a>    
-  <div ng-click="vm_name.fbFeed(vm_name.bandName.name)">FB Feed</div>
-  <div><a ng-href="{{vm_name.twtrTweet(vm_name.twtrBandName())}}">Twitter</a></div>
+  <div class="col-xs flex-xs-middle text-xs-center" ng-if="!vm_name.loadingPage"> 
+    <h1 class="my-1" ng-bind="vm_name.bandName.name"></h1>
+    <h1 class="my-1" ng-bind="vm_name.bandName.genre_id"></h1>
+    <a ui-sref="form.genre" class="btn btn-info my-1" ng-click="vm_name.resetBandName()">Get Another Band Name</a>    
+    <div ng-click="vm_name.fbFeed(vm_name.bandName.name)">FB Feed</div>
+    <div><a ng-href="{{vm_name.twtrTweet(vm_name.twtrBandName())}}">Twitter</a></div>
+  </div>
 </div>
