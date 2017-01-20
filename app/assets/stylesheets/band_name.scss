@@ -6,23 +6,57 @@
   color: red;
 }
 
+// Background image on form states
+.bg-img {
+  position: relative;
+}
+
+.bg-img:before {    
+  content: ' ';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;  
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  background-size: cover;  
+}
+
+.bg-img.bg-img-index:before {
+  background-image: url(image_path('banderoo_background_grey.svg'));
+}
+
+.bg-img.bg-img-genre:before {
+  background-image: url(image_path('banderoo_background_pink.svg'));
+}
+
+.bg-img.bg-img-length:before {
+  background-image: url(image_path('banderoo_background_yellow.svg'));
+}
+
+.bg-img.bg-img-start-word:before {
+  background-image: url(image_path('banderoo_background_blue.svg'));
+}
+
 // Body background colors depending on $state
-.bg-index, .bg-band-name {
-  background: $black;
+.bg-color-index, .bg-color-band-name {
+  background-color: $black;
 }
 
-.bg-band-name.bg-loading {
-  background: $cornflower;
+.bg-color-band-name.bg-color-loading {
+  background-color: $cornflower;
 }
 
-.bg-genre {
-  background: $carnation;
+.bg-color-genre {
+  background-color: $carnation;
 }
 
-.bg-length {
-  background: $ronchi;  
+.bg-color-length {
+  background-color: $ronchi;  
 }
 
-.bg-start-word {
-  background: $cornflower;
+.bg-color-start-word {
+  background-color: $cornflower;
 }
