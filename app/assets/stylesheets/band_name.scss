@@ -24,7 +24,8 @@
   background-size: cover;  
 }
 
-.bg-img.bg-img-index:before {
+.bg-img.bg-img-index:before,
+.bg-img.bg-img-band-name:before {
   background-image: url(image_path('banderoo_background_grey.svg'));
 }
 
@@ -36,7 +37,8 @@
   background-image: url(image_path('banderoo_background_yellow.svg'));
 }
 
-.bg-img.bg-img-start-word:before {
+.bg-img.bg-img-start-word:before,
+.bg-img.bg-img-loading:before {
   background-image: url(image_path('banderoo_background_blue.svg'));
 }
 
