@@ -9,14 +9,16 @@
     
   </head>
 
-  <body ng-app="app" ng-class="$state.current.data.bodyClass">
-    <div class="container">
-    
-      <%= render 'layouts/notices' %>
-      <%#= yield %>
+  <body ng-app="app" ng-class="$state.current.data.bgColorClass">
+    <div ng-class="$state.current.data.bgImgClass">
+      <div class="container">
+      
+        <%= render 'layouts/notices' %>
+        <%#= yield %>
 
-      <ui-view></ui-view>
+        <ui-view></ui-view>
 
+      </div>
     </div>
   </body>
 </html>
