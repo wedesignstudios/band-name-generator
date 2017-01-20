@@ -66,7 +66,8 @@ angular
                       return 'form.start-word';
                     }
                 }],
-                bgColorClass: 'bg-color-band-name bg-color-loading'                
+                bgColorClass: 'bg-color-band-name bg-color-loading',
+                bgImgClass: 'bg-img bg-img-loading bg-img-band-name'                
               }
           })
           .state('otherwise', {
