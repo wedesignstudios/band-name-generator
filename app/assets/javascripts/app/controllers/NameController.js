@@ -4,13 +4,14 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
   ctrl.loadingPage = true;
   ctrl.bandName = ShareBandNameService;
 
-  ctrl.removeBodyClass = (className) => {
-    let body = angular.element(document.querySelector('body'));
-    body.removeClass(className);    
+  ctrl.removeClassFromElement = (className, element) => {
+    let elem = angular.element(document.querySelector(element));
+    elem.removeClass(className);    
   }
 
   ctrl.hideLoadingPage = () => {
-    ctrl.removeBodyClass('bg-color-loading');
+    ctrl.removeClassFromElement('bg-color-loading', 'body');
+    ctrl.removeClassFromElement('bg-img-loading', '.bg-img');
     ctrl.loadingPage = false;
   }
 
