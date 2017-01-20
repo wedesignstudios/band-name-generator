@@ -62,3 +62,26 @@
 .bg-color-start-word {
   background-color: $cornflower;
 }
+
+// Font rules for #band-name depending on selected genre
+.genre-font-pop {
+  font-family: 'Times New Roman';
+}
+.genre-font-indie {
+  font-family: Arial;
+}
+.genre-font-punk {
+  font-family: 'Courier New';
+}
+.genre-font-rock {
+  font-family: 'Arial Black';
+}
+.genre-font-metal {
+  font-family: Impact;
+}
+.genre-font-jazz {
+  font-family: Helvetica;
+}
+.genre-font-country {
+  font-family: Verdana;
+}
