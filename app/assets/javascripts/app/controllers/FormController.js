@@ -5,6 +5,7 @@ function FormController($window, $filter, FormDataService, WordService, GenreSer
   ctrl.genres = [];
   ctrl.bandWords = [];
   ctrl.bandName = ShareBandNameService;
+  ctrl.slideDir;
 
   ctrl.getGenreNames = function() {
     GenreService.getGenres()
@@ -68,6 +69,14 @@ function FormController($window, $filter, FormDataService, WordService, GenreSer
     ctrl.setBeginningWords();
     ctrl.setBandWords(numOfWords);
     $window.location.href = '/#/band-name';    
+  }
+
+  ctrl.slideViewLeft = () => {
+    ctrl.slideDir = 'slide-left';
+  }
+
+  ctrl.slideViewRight = () => {
+    ctrl.slideDir = 'slide-right';
   }
 
   ctrl.getGenreNames();
