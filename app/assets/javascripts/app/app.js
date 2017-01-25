@@ -1,5 +1,5 @@
 angular
-  .module('app', ['ui.router', 'templates'])
+  .module('app', ['ui.router', 'templates', 'ngAnimate'])
   .config(function($stateProvider) {      
       $stateProvider
           .state('index', {
