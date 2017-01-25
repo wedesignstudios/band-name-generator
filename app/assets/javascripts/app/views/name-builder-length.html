@@ -49,7 +49,7 @@
     </div>
   </div>
     
-  <a ui-sref="form.genre" class="btn btn-secondary">Prev</a>  
-  <a ui-sref="form.start-word" class="btn btn-secondary" ng-if="vm_form.formData.hasOwnProperty('words')">Next</a>
+  <a ui-sref="form.genre" class="btn btn-secondary" ng-click="vm_form.slideViewRight()">Prev</a>  
+  <a ui-sref="form.start-word" class="btn btn-secondary" ng-if="vm_form.formData.hasOwnProperty('words')" ng-click="vm_form.slideViewLeft()">Next</a>
 
 </div>
