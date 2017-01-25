@@ -11,7 +11,9 @@
   
   <div class="col-xs-12 flex-xs-middle text-xs-center">      
     <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)">
-    <ui-view id="form-views"></ui-view>
+    <section class="ui-view-container">
+      <div ui-view class="slide-right"></div>
+    </section>
     </form>
   </div>
 
