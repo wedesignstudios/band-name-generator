@@ -1,14 +1,18 @@
-<h1>Step #3</h1>
-<h3>Should there be a start word?</h3>
+<div class="ui-view-content">
 
-<select class="form-control my-1" ng-model="vm_form.formData.beginsWith">
-  <option value="" disabled selected>Choose a beginning word: </option>   
-  <option value="">No beginning word</option>   
-  <option ng-repeat="word in vm_form.beginningWords  | orderBy : 'string' " value="{{ word.string }}">{{ word.string }}</option>         
-</select>
+  <h1>Step #3</h1>
+  <h3>Should there be a start word?</h3>
 
-<a ui-sref="form.length" class="btn btn-secondary">Prev</a>
+  <select class="form-control my-1" ng-model="vm_form.formData.beginsWith">
+    <option value="" disabled selected>Choose a beginning word: </option>   
+    <option value="">No beginning word</option>   
+    <option ng-repeat="word in vm_form.beginningWords  | orderBy : 'string' " value="{{ word.string }}">{{ word.string }}</option>         
+  </select>
 
-<div>
-  <button type="submit" class="btn btn-secondary my-1" ng-if="vm_form.formData.hasOwnProperty('beginsWith')">Get Band Name</button>
+  <a ui-sref="form.length" class="btn btn-secondary">Prev</a>
+
+  <div>
+    <button type="submit" class="btn btn-secondary my-1" ng-if="vm_form.formData.hasOwnProperty('beginsWith')">Get Band Name</button>
+  </div>
+
 </div>
