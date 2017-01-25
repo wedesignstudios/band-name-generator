@@ -67,21 +67,85 @@
 .genre-font-pop {
   font-family: 'Times New Roman';
 }
+
 .genre-font-indie {
   font-family: Arial;
 }
+
 .genre-font-punk {
   font-family: 'Courier New';
 }
+
 .genre-font-rock {
   font-family: 'Arial Black';
 }
+
 .genre-font-metal {
   font-family: Impact;
 }
+
 .genre-font-jazz {
   font-family: Helvetica;
 }
+
 .genre-font-country {
   font-family: Verdana;
+}
+
+// Animations between $state changes
+
+.ui-view-container {
+  overflow: hidden;
+  position: relative;  
+  height: 17rem;
+}
+
+.slide-left.ng-enter,
+.slide-left.ng-leave,
+.slide-right.ng-enter,
+.slide-right.ng-leave {
+  position: absolute;
+  top: 0; right: 0; bottom: 0; left: 0;
+  transition: transform .7s ease-in-out;
+}
+
+.slide-left.ng-enter {
+  z-index: 101;
+  transform: translateX(100%);
+}
+
+.slide-left.ng-enter.ng-enter-active {
+  transform: translateX(0);
+}
+
+.slide-left.ng-leave {
+  z-index: 100;
+  transform: translateX(0);
+}
+
+.slide-left.ng-leave.ng-leave-active {
+  transform: translateX(-100%);
+}
+
+.slide-right.ng-enter {
+  z-index: 101;
+  transform: translateX(-100%);
+}
+
+.slide-right.ng-enter.ng-enter-active {
+  transform: translateX(0);
+}
+
+.slide-right.ng-leave {
+  z-index: 100;
+  transform: translateX(0);
+}
+
+.slide-right.ng-leave.ng-leave-active {
+  transform: translateX(100%);
+}
+
+.ui-view-content {
+  position:absolute;
+  width: 100%;
 }
