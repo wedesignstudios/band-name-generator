@@ -3,9 +3,9 @@
   <div class="col-xs flex-xs-top text-xs-center">
     <h3 class="my-1">:: Banderoo Logo ::</h3>
     <div id="status-buttons" class="text-center">
-      <a ui-sref-active="active" ui-sref="form.genre">Genre</a>
-      <a ui-sref-active="active" ui-sref="form.length">Length</a>
-      <a ui-sref-active="active" ui-sref="form.start-word">Start Word</a>
+      <a ui-sref-active="active" ui-sref="form.genre" ng-click="vm_form.setStatusButtonSlide(0, $state.current.name)">Genre</a>
+      <a ui-sref-active="active" ui-sref="form.length" ng-click="vm_form.setStatusButtonSlide(1, $state.current.name)">Length</a>
+      <a ui-sref-active="active" ui-sref="form.start-word" ng-click="vm_form.setStatusButtonSlide(2, $state.current.name)">Start Word</a>
     </div>    
   </div>
   
