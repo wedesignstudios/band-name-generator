@@ -1,11 +1,17 @@
-function FormController($window, $filter, FormDataService, WordService, GenreService, BandNameService, ShareBandNameService) {
+function FormController($window, $filter, $state, FormDataService, WordService, GenreService, BandNameService, ShareBandNameService) {
   var ctrl = this;
 
   ctrl.formData = FormDataService.formData;
   ctrl.genres = [];
   ctrl.bandWords = [];
-  ctrl.bandName = ShareBandNameService;
-  ctrl.slideDir;
+  ctrl.bandName = ShareBandNameService;  
+  
+  ctrl.statusButtonSlide = {
+    'form.genre': ['', 'slide-left', 'slide-left'],  
+    'form.length': ['slide-right', '', 'slide-left'],  
+    'form.start-word': ['slide-right', 'slide-right', '']  
+  };
+
 
   ctrl.getGenreNames = function() {
     GenreService.getGenres()
@@ -79,8 +85,12 @@ function FormController($window, $filter, FormDataService, WordService, GenreSer
     ctrl.slideDir = 'slide-right';
   }
 
+  ctrl.setStatusButtonSlide = (buttonNum, currentStateName) => {
+    ctrl.slideDir = ctrl.statusButtonSlide[currentStateName][buttonNum];    
+  }
+
   ctrl.getGenreNames();
-  ctrl.getBeginningWords();   
+  ctrl.getBeginningWords();
 
 }
 
