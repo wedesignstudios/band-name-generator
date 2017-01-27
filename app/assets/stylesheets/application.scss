@@ -18,6 +18,53 @@
   @import "name_builder_length";
   @import "band_name";
 
+  @font-face {
+    font-family: 'EdmondSans';
+    src: font-url('Edmondsans-Regular.otf');    
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'EdmondSansMedium';
+    src: font-url('Edmondsans-Medium.otf');    
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'EdmondSansBold';
+    src: font-url('Edmondsans-Bold.otf');    
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .edmond-reg {
+    font-family: 'EdmondSans';
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .edmond-med {
+    font-family: 'EdmondSansMedium';
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .edmond-bold {
+    font-family: 'EdmondSansBold';
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'EdmondSansMedium';
+  }
+
+  p, div {
+    font-family: 'EdmondSans';
+  }
+
   $margins: (xs: 0.5rem, sm: 1rem, md: 1.5rem, lg: 2rem, xl: 2.5rem);
 
   * {
@@ -41,6 +88,9 @@
     color: $white;
     background-color: $carnation;
     border-color: transparent;
+    font-family: 'EdmondSansMedium';
+    font-weight: normal;
+    font-style: normal;
     text-transform: uppercase;
   }
   
