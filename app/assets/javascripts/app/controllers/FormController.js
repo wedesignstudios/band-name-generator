@@ -2,7 +2,8 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
   var ctrl = this;
 
   ctrl.formData = FormDataService.formData;
-  ctrl.genres = [];
+  ctrl.formData.genre_id = ''; 
+  ctrl.formData.beginsWith = '';  
   ctrl.bandWords = [];
   ctrl.bandName = ShareBandNameService;  
   
@@ -15,8 +16,8 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
 
   ctrl.getGenreNames = function() {
     GenreService.getGenres()
-      .then(function(response) {        
-        ctrl.genres.push(response.data.genres);
+      .then(function(response) {
+        ctrl.genres = response.data.genres;        
       });
   }
 
@@ -24,13 +25,13 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
     WordService.getWords()
       .then(function(response) {
         var beginningWords = $filter('removeBeginningWordsFilter')(response.data.words, true);
-        ctrl.beginningWords = $filter('editBeginningWordsFilter')(beginningWords, ['The', 'By', 'Of', 'That', 'This', 'In']);
+        ctrl.beginningWords = $filter('editBeginningWordsFilter')(beginningWords, ['The', 'By', 'Of', 'That', 'This', 'In', 'No start word']);
       });
   }
 
   ctrl.setBeginningWords = function() {
-    if (ctrl.formData.beginsWith != undefined && ctrl.formData.beginsWith != '') {
-      ctrl.bandWords.push(ctrl.formData.beginsWith);      
+    if (ctrl.formData.beginsWith.string != 'No start word' && ctrl.formData.beginsWith.string != '') {
+      ctrl.bandWords.push(ctrl.formData.beginsWith.string);      
     }
   }
 
@@ -57,7 +58,7 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
   }
 
   ctrl.setBandGenre = function() {
-    ctrl.bandName.genre_id = ctrl.formData.genre_id;
+    ctrl.bandName.genre_id = ctrl.formData.genre_id.id;
   }
 
   ctrl.saveBandName = function() {
