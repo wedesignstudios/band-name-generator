@@ -3,13 +3,8 @@
   <h1>Step #1</h1>
   <h3>What kind of band is it?</h3>
 
-  <div ng-repeat="genre in vm_form.genres">
-    <select class="form-control my-1" ng-model="vm_form.formData.genre_id">
-      <option value="" disabled selected>Choose a genre:</option>
-      <option ng-repeat="(key, value) in genre" value="{{ value.id }}">{{ value.name }}</option>
-    </select>
-  </div>
+  <dropdown placeholder="Choose a genre:" list="vm_form.genres" my-selected="vm_form.formData.genre_id" property="name" value="id"></dropdown>
 
-  <a ui-sref="form.length" class="btn btn-secondary" ng-if="!(vm_form.formData | checkIfObjectIsEmptyFilter)" ng-click="vm_form.slideViewLeft()">Next</a>  
+  <a ui-sref="form.length" class="btn btn-secondary" ng-if="!(vm_form.formData.genre_id === '')" ng-click="vm_form.slideViewLeft()">Next</a>  
 
 </div>

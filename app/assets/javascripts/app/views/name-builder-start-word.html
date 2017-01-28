@@ -1,18 +1,14 @@
 <div class="ui-view-content">
 
   <h1>Step #3</h1>
-  <h3>Should there be a start word?</h3>
+  <h3>Should there be a start word?</h3>  
 
-  <select class="form-control my-1" ng-model="vm_form.formData.beginsWith">
-    <option value="" disabled selected>Choose a start word: </option>   
-    <option value="">No start word</option>   
-    <option ng-repeat="word in vm_form.beginningWords  | orderBy : 'string' " value="{{ word.string }}">{{ word.string }}</option>         
-  </select>
+  <dropdown placeholder="Choose a start word:" list="vm_form.beginningWords" my-selected="vm_form.formData.beginsWith" property="string" value="string"></dropdown>
 
   <a ui-sref="form.length" class="btn btn-secondary" ng-click="vm_form.slideViewRight()">Prev</a>
 
   <div>
-    <button type="submit" class="btn btn-secondary my-1" ng-if="vm_form.formData.hasOwnProperty('beginsWith')">Get Band Name</button>
+    <button type="submit" class="btn btn-secondary my-1" ng-if="!(vm_form.formData.beginsWith === '')">Get Band Name</button>
   </div>
 
 </div>
