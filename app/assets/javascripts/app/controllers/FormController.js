@@ -1,11 +1,12 @@
-function FormController($window, $filter, $state, FormDataService, WordService, GenreService, BandNameService, ShareBandNameService) {
+function FormController($window, $filter, $state, FormDataService, WordService, GenreService, BandNameService, ShareBandNameService, DetectIOSService) {
   var ctrl = this;
 
   ctrl.formData = FormDataService.formData;
   ctrl.formData.genre_id = ''; 
   ctrl.formData.beginsWith = '';  
   ctrl.bandWords = [];
-  ctrl.bandName = ShareBandNameService;  
+  ctrl.bandName = ShareBandNameService;
+  ctrl.iOS = DetectIOSService.iOS();  
   
   ctrl.statusButtonSlide = {
     'form.genre': ['', 'slide-left', 'slide-left'],  
