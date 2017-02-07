@@ -1,25 +1,16 @@
-<div class="row flex-row-full-height">
-  
-  <div class="col-xs flex-xs-top text-xs-center">
-    <h3 class="my-1">:: Banderoo Logo ::</h3>
-    <div id="status-buttons" class="text-center">
-      <a ui-sref-active="active" ui-sref="form.genre" ng-click="vm_form.setStatusButtonSlide(0, $state.current.name)">Genre</a>
-      <a ui-sref-active="active" ui-sref="form.length" ng-click="vm_form.setStatusButtonSlide(1, $state.current.name)">Length</a>
-      <a ui-sref-active="active" ui-sref="form.start-word" ng-click="vm_form.setStatusButtonSlide(2, $state.current.name)">Start Word</a>
-    </div>    
-  </div>
-  
-  <div class="col-xs-12 flex-xs-middle text-xs-center">      
-    <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)">
-    <section class="ui-view-container">
-      <div id="nested-view" ui-view ng-class="vm_form.slideDir"></div>
-    </section>
-    </form>
-  </div>
+<div class="col-12 text-center">
+  <h3 class="my-3">:: Banderoo Logo ::</h3>
+  <div id="status-buttons">
+    <a ui-sref-active="active" ui-sref="form.genre" ng-click="vm_form.setStatusButtonSlide(0, $state.current.name)">Genre</a>
+    <a ui-sref-active="active" ui-sref="form.length" ng-click="vm_form.setStatusButtonSlide(1, $state.current.name)">Length</a>
+    <a ui-sref-active="active" ui-sref="form.start-word" ng-click="vm_form.setStatusButtonSlide(2, $state.current.name)">Start Word</a>
+  </div>    
+</div>
 
-  <div class="col-xs-12">
-    <pre>{{ vm_form.formData }}</pre>
-    <h3 ng-bind="vm_form.bandName.name"></h3>
-  </div> 
-
+<div class="col-12 text-center">      
+  <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)">
+  <!-- <section class="ui-view-container"> -->
+    <div class="nested-view" ui-view ng-class="vm_form.slideDir"></div>
+  <!-- </section> -->
+  </form>
 </div>

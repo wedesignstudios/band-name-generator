@@ -1,10 +1,16 @@
-<div class="ui-view-content">
-
-  <h1>Step #1</h1>
-  <h3>What kind of band is it?</h3>
-
-  <dropdown placeholder="Choose a genre:" list="vm_form.genres" my-selected="vm_form.formData.genre_id" property="name" value="id"></dropdown>
-
-  <a ui-sref="form.length" class="btn btn-secondary" ng-if="!(vm_form.formData.genre_id === '')" ng-click="vm_form.slideViewLeft()">Next</a>  
+<div class="ui-view-content">  
+  
+  <div class="row mt-5">
+    <div class="col-12 mb-2">
+      <h1 class="uppercase edmond-bold">Step #1</h1>
+      <h3>What kind of band is it?</h3>
+    </div>
+    
+    <dropdown placeholder="Choose a genre:" list="vm_form.genres" my-selected="vm_form.formData.genre_id" property="name" value="id" color="cornflower" class="col-12 col-xl-6 offset-xl-3 mb-3 red"></dropdown>
+    
+    <div class="col-12">
+      <a ui-sref="form.length" class="btn btn-secondary" ng-if="!(vm_form.formData.genre_id === '')" ng-click="vm_form.slideViewLeft()">Next</a>
+    </div>
+  </div>
 
 </div>
