@@ -6,19 +6,19 @@
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <meta name="viewport" content="initial-scale=1.0001, minimum-scale=1.0001, maximum-scale=1.0001, user-scalable=no"/>
+
     
   </head>
 
-  <body ng-app="app" ng-class="$state.current.data.bgColorClass">
-    <div ng-class="$state.current.data.bgImgClass">
+  <body ng-app="app" ng-class="[$state.current.data.bgColorClass, $state.current.data.bgImgClass]" class="bg-img">    
       <div class="container">
       
         <%= render 'layouts/notices' %>
         <%#= yield %>
 
-        <ui-view></ui-view>
+        <ui-view class="row justify-content-center"></ui-view>
 
-      </div>
-    </div>
+      </div>    
   </body>
 </html>
