@@ -8,7 +8,8 @@ function Dropdown($rootScope, $document) {
       mySelected: '=',
       property: '@',
       value: '@',
-      specialItem: '@'
+      specialItem: '@',
+      color: '@'
     },
     link: function(scope) {
       scope.listVisible = false;

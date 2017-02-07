@@ -1,6 +1,6 @@
 <div class="dropdown-container" ng-class="{ show: listVisible }">
   
-  <div class="dropdown-display" ng-click="show();" ng-class="{ clicked: listVisible }">
+  <div class="dropdown-display {{color}}" ng-click="show();" ng-class="{ clicked: listVisible }">
     
     <span class="display" ng-if="!isPlaceholder">{{ display }}</span>
     <span class="placeholder" ng-if="isPlaceholder">{{ placeholder }}</span>
@@ -9,10 +9,10 @@
 
   </div>
 
-  <div class="dropdown-list">
+  <div class="dropdown-list mb-1">
     <div>
     
-      <div ng-repeat="item in list" ng-click="select(item)" ng-class="{ selected: isSelected(item) }">
+      <div ng-repeat="item in list" ng-click="select(item)" ng-class="{ selected: isSelected(item) }" class="{{color}}">
       
         <span>{{property !== undefined ? item[property] : item}}</span>
         
