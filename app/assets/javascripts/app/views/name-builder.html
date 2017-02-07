@@ -8,9 +8,8 @@
 </div>
 
 <div class="col-12 text-center">      
-  <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)">
-  <!-- <section class="ui-view-container"> -->
-    <div class="nested-view" ui-view ng-class="vm_form.slideDir"></div>
-  <!-- </section> -->
+  <form id="name-builder" ng-submit="vm_form.getBandName(vm_form.formData.words)"> 
+    <div class="nested-view" ui-view ng-if="vm_form.iOS"></div>
+    <div class="nested-view-transition" ui-view ng-class="vm_form.slideDir" ng-if="!vm_form.iOS"></div>  
   </form>
 </div>
