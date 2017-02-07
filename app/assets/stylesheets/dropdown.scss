@@ -1,9 +1,6 @@
-$height: 40px;
-$spacing: 10px;
-$placeholder-colour: #AAA;
-$select-colour: #2875C7;
-$font-size: 14px;
-$border-colour: #DDD;
+$height: 3.5rem;
+$spacing: 0.8rem;
+$font-size: 1.15rem;
 
 @mixin vertical-center($height) {
   height: $height;
@@ -13,24 +10,30 @@ $border-colour: #DDD;
 }
 
 dropdown {
-  float: left;
+  /* float: left; */
   display: block;
   width: 250px;
 
     >div {
-      float: left;
+      /* float: left; */
       width: 100%;
 
         >div.dropdown-display {
-          float: left;
+          /* float: left; */
           width: 100%;
-          background: white;
           height: $height;
-          cursor: pointer;
-          border: solid 1px $border-colour;
+          cursor: pointer;          
           box-sizing: border-box;
+            
+            &.cornflower {
+              background-color: $cornflower;              
+            }
 
-          $icon-width: 14px;
+            &.carnation {
+              background-color: $carnation;              
+            }
+
+          $icon-width: 1rem;
 
             >* {
               float: left;
@@ -47,11 +50,12 @@ dropdown {
               padding-left: $spacing;
 
                 &.placeholder, &.display {
-                  color: $placeholder-colour;
+                  color: $white;
                 }
             }
 
             >i {
+              color: $white;
               position:relative;
               width: $icon-width;
               margin-left: ($spacing + $icon-width) * -1;
@@ -63,7 +67,7 @@ dropdown {
         }
 
         >div.dropdown-list {
-          color: $placeholder-colour;
+          color: $black;
           float: left;
           z-index: 1;
           width: 100%;
@@ -75,27 +79,41 @@ dropdown {
               position: absolute;
               width: 100%;
               z-index: 2;
-              cursor: pointer;
-              background: white;
+              cursor: pointer;              
 
                 >div {
+                  background: white;
                   float: left;
                   width: 100%;
                   padding: 0 $spacing;
                   font-size: $font-size;
                   box-sizing: border-box;
-                  border: solid 1px $border-colour; border-top:none;
+                  border: solid 1px $alto; border-top:none;
 
-                  $icon-width: 20px;
+                  $icon-width: 1.2rem;
+
+                    &:last-child {
+                      margin-bottom: 2rem;
+                    }
 
                     &:hover {
                       background: #F0F0F0;
                     }
 
                     &.selected {
-                      background: $select-colour;
+                      background: $black;
+                      border: none;
                       color: white;
+                        
+                        &.cornflower {
+                          background: $cornflower;                      
+                        }
+
+                        &.carnation {
+                          background: $carnation;                      
+                        }
                     }
+
 
                     >* {
                      @include vertical-center($height);
