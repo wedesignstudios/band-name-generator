@@ -8,7 +8,7 @@ angular
               controller: 'IndexController as vm_index',
               data: {
                 bgColorClass: 'bg-color-index',
-                bgImgClass: 'bg-img bg-img-index'
+                bgImgClass: 'bg-img-index'
               }                            
           })
           .state('form', {
@@ -21,7 +21,7 @@ angular
               templateUrl: 'app/views/name-builder-genre.html',
               data: {
                 bgColorClass: 'bg-color-genre',
-                bgImgClass: 'bg-img bg-img-genre'
+                bgImgClass: 'bg-img-genre'
               }              
           })
           .state('form.length', {
@@ -34,7 +34,7 @@ angular
                     }
                 }],
                 bgColorClass: 'bg-color-length',
-                bgImgClass: 'bg-img bg-img-length'
+                bgImgClass: 'bg-img-length'
               }
           })
           .state('form.start-word', {
@@ -49,7 +49,7 @@ angular
                     }
                 }],
                 bgColorClass: 'bg-color-start-word',
-                bgImgClass: 'bg-img bg-img-start-word'
+                bgImgClass: 'bg-img-start-word'
               }
           })
           .state('name', {
@@ -67,7 +67,7 @@ angular
                     }
                 }],
                 bgColorClass: 'bg-color-band-name bg-color-loading',
-                bgImgClass: 'bg-img bg-img-loading bg-img-band-name'                
+                bgImgClass: 'bg-img-loading bg-img-band-name'                
               }
           })
           .state('otherwise', {
@@ -75,7 +75,7 @@ angular
               templateUrl: 'app/views/index.html',
               data: {
                 bgColorClass: 'bg-color-index',
-                bgImgClass: 'bg-img bg-img-index'
+                bgImgClass: 'bg-img-index'
               } 
           });      
   })
