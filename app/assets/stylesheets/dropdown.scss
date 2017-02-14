@@ -1,12 +1,16 @@
 $height: 3.5rem;
 $spacing: 0.8rem;
-$font-size: 1.15rem;
+$font-size: 1.45rem;
 
 @mixin vertical-center($height) {
   height: $height;
   line-height: $height !important;
   display: inline-block;
   vertical-align: middle;
+}
+
+@mixin bold-font-kerning {  
+  letter-spacing: 0.06rem;
 }
 
 dropdown {
@@ -20,6 +24,7 @@ dropdown {
 
         >div.dropdown-display {
           /* float: left; */
+          @include bold-font-kerning;
           width: 100%;
           height: $height;
           cursor: pointer;          
@@ -67,7 +72,7 @@ dropdown {
         }
 
         >div.dropdown-list {
-          color: $black;
+          color: $dove-gray;
           float: left;
           z-index: 1;
           width: 100%;
@@ -82,13 +87,15 @@ dropdown {
               cursor: pointer;              
 
                 >div {
+                  @include bold-font-kerning;
                   background: white;
-                  float: left;
+                  float: left;                  
                   width: 100%;
                   padding: 0 $spacing;
                   font-size: $font-size;
                   box-sizing: border-box;
-                  border: solid 1px $alto; border-top:none;
+                  border: solid 1px $alto;
+                  border-top:none;
 
                   $icon-width: 1.2rem;
 

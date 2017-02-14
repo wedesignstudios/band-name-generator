@@ -9,37 +9,25 @@
 // Background image on form states
 .bg-img {
   position: relative;
+  background-size: cover;
 }
 
-.bg-img:before {    
-  content: ' ';
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;  
-  background-repeat: no-repeat;
-  background-position: 50% 0;
-  background-size: cover;  
+.bg-img-index,
+.bg-img-band-name {
+  background-image: image-url('banderoo_background_grey.svg');  
 }
 
-.bg-img.bg-img-index:before,
-.bg-img.bg-img-band-name:before {
-  background-image: url(image_path('banderoo_background_grey.svg'));
+.bg-img-genre {
+  background-image: image-url('banderoo_background_pink.svg');
 }
 
-.bg-img.bg-img-genre:before {
-  background-image: url(image_path('banderoo_background_pink.svg'));
+.bg-img-length {
+  background-image: image-url('banderoo_background_yellow.svg');
 }
 
-.bg-img.bg-img-length:before {
-  background-image: url(image_path('banderoo_background_yellow.svg'));
-}
-
-.bg-img.bg-img-start-word:before,
-.bg-img.bg-img-loading:before {
-  background-image: url(image_path('banderoo_background_blue.svg'));
+.bg-img-start-word,
+.bg-img-loading {
+  background-image: image-url('banderoo_background_blue.svg');
 }
 
 // Body background colors depending on $state
@@ -94,58 +82,72 @@
 
 // Animations between $state changes
 
-.ui-view-container {
-  overflow: hidden;
-  position: relative;  
-  height: 17rem;
-}
-
-.slide-left.ng-enter,
-.slide-left.ng-leave,
-.slide-right.ng-enter,
-.slide-right.ng-leave {
-  position: absolute;
-  top: 0; right: 0; bottom: 0; left: 0;
-  transition: transform .7s ease-in-out;
-}
-
-.slide-left.ng-enter {
-  z-index: 101;
-  transform: translateX(100%);
-}
-
-.slide-left.ng-enter.ng-enter-active {
-  transform: translateX(0);
-}
-
-.slide-left.ng-leave {
-  z-index: 100;
-  transform: translateX(0);
-}
-
-.slide-left.ng-leave.ng-leave-active {
-  transform: translateX(-100%);
-}
-
-.slide-right.ng-enter {
-  z-index: 101;
-  transform: translateX(-100%);
-}
-
-.slide-right.ng-enter.ng-enter-active {
-  transform: translateX(0);
-}
-
-.slide-right.ng-leave {
-  z-index: 100;
-  transform: translateX(0);
-}
-
-.slide-right.ng-leave.ng-leave-active {
-  transform: translateX(100%);
-}
-
-.ui-view-content {
-  position:absolute;
+.nested-view {
   width: 100%;
 }
+
+.nested-view-transition {  
+  width: 100%;
+
+  &.ng-enter-prepare {
+    opacity: 0;
+  }
+
+  &.ng-enter,
+  &.ng-leave {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;    
+    -webkit-transition: -webkit-transform 0.7s ease-in-out;
+            transition: transform 0.7s ease-in-out;
+  }
+
+  &.slide-left.ng-enter,
+  &.slide-left.ng-enter-prepare {
+    z-index: 101; 
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+
+  &.slide-left.ng-enter-active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  
+  &.slide-left.ng-leave {
+    z-index: 100;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  &.slide-left.ng-leave-active {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+
+  &.slide-right.ng-enter,
+  &.slide-right.ng-enter-prepare {
+    z-index: 101;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+
+  &.slide-right.ng-enter-active {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  &.slide-right.ng-leave {
+    z-index: 100;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+
+  &.slide-right.ng-leave-active {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+

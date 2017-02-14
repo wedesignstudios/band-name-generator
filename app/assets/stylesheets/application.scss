@@ -15,7 +15,7 @@
 
   @import "bootstrap";
   @import "font-awesome.css";
-  @import "colors";
+  @import "colors";  
   @import "name_builder_length";
   @import "band_name";
   @import "dropdown";
@@ -59,15 +59,34 @@
     font-style: normal;
   }
 
+  // Set font-size base for all rem
+  html {    
+    font-size: 14px;
+    height: 100%;
+  }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'EdmondSansMedium';
   }
 
-  p, div {
-    font-family: 'EdmondSans';
+  $baseline: 1.57rem;
+  $margins: (xs: 0.5rem, sm: 1rem, md: 1.5rem, lg: 2rem, xl: 2.5rem);
+
+  h1 {
+    font-size: 3.5rem;
+    line-height: $baseline*2;
+    margin-bottom: $baseline;
   }
 
-  $margins: (xs: 0.5rem, sm: 1rem, md: 1.5rem, lg: 2rem, xl: 2.5rem);
+  h3 {
+    font-size: 2rem;
+    line-height: $baseline*1.5;
+    margin-bottom: $baseline;
+  }
+
+  a {
+    color: inherit;
+  }
 
   * {
     box-sizing: border-box;  
@@ -75,27 +94,105 @@
 
   body {
     color: $white;
+    font-family: 'EdmondSans', sans-serif;
+  }
+
+  button, input {
+    font-family: inherit;
+  }
+
+  .mb-6 {
+    margin-bottom: $spacer*3.75;
+  }
+
+  .mt-20vh {
+    margin-top: 20vh;
+  }
+
+  .uppercase {
+    text-transform: uppercase;
   }
 
   .flex-row-full-height {    
-    height: 100vh;    
+    height: 100vh;
+    max-height: 100vh;    
   }
 
+  .no-hover-effects {
+    &:hover {
+      color: inherit;
+      text-decoration: none; 
+    }
+  }
 
+  .no-focus-effects {
+    &:focus {
+      box-shadow: none;      
+    }
+  }
+
+  //Color classes
+  .color-carnation {
+    color: $carnation;
+  }
+
+  .color-ronchi {
+    color: $ronchi;
+  }
+
+  .color-cornflower {
+    color: $cornflower;
+  }
+
+  // Button Styles
   .btn {
     border-radius: 0;
+    padding: 1rem 3rem;
+    white-space: normal;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  .btn-carnation {
+    background-color: $carnation;    
+  }
+
+  .btn-ronchi {
+    background-color: $ronchi;    
+  }
+
+  .btn-cornflower {
+    background-color: $cornflower;    
   }
 
   .btn-banderoo {
     color: $white;
-    background-color: $carnation;
     border-color: transparent;
-    font-family: 'EdmondSansMedium';
+    font-family: 'EdmondSansBold';
     font-weight: normal;
     font-style: normal;
+    line-height: $baseline;
     text-transform: uppercase;
+
+    .btn-text {
+      display: inline-block;
+      font-size: 1.3rem;
+      letter-spacing: 0.07rem;    
+      vertical-align: text-top;
+    }
   }
   
   a.btn-banderoo:hover {
     color: $white;
-  }  
+  }
+
+  // Back Button
+
+  .btn-back {
+    border: 1px solid;
+    padding: 0.5rem;
+  }
+
+  @import "mobile_styles";
