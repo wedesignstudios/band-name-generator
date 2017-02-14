@@ -3,10 +3,10 @@
   <div class="row mt-5">
     <div class="col-12 mb-2">
       <h1 class="uppercase edmond-bold">Step #2</h1>
-      <h3>How long should the name be?</h3>
+      <h3>Length of name?</h3>
     </div>
 
-    <div class="name-builder-length-container col-12 col-md-6 offset-md-3 mb-3">
+    <div class="name-builder-length-container col-12 col-md-6 offset-md-3 mb-5">
       <div class="radio-tile-group">
 
         <div class="input-container">
@@ -51,9 +51,12 @@
 
       </div>
     </div>
-    <div class="col-12">  
-      <a ui-sref="form.genre" class="btn btn-secondary" ng-click="vm_form.slideViewRight()">Prev</a>  
-      <a ui-sref="form.start-word" class="btn btn-secondary" ng-if="vm_form.formData.hasOwnProperty('words')" ng-click="vm_form.slideViewLeft()">Next</a>
+    <div class="col-12 mb-4">
+      <a ui-sref="form.start-word" class="btn btn-cornflower btn-banderoo no-focus-effects" ng-if="vm_form.formData.hasOwnProperty('words')" ng-click="vm_form.slideViewLeft()"><span class="btn-text">Next</span></a>
+    </div>
+
+    <div class="col-12 color-carnation">
+      <a ui-sref="form.genre" ng-click="vm_form.slideViewRight()" class="btn-back no-hover-effects"><i class="fa fa-angle-left" aria-hidden="true"></i> Go Back</a>  
     </div>
   </div>
 </div>
