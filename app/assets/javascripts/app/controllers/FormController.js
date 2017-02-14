@@ -8,13 +8,6 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
   ctrl.bandName = ShareBandNameService;
   ctrl.iOS = DetectIOSService.iOS();  
   
-  ctrl.statusButtonSlide = {
-    'form.genre': ['', 'slide-left', 'slide-left'],  
-    'form.length': ['slide-right', '', 'slide-left'],  
-    'form.start-word': ['slide-right', 'slide-right', '']  
-  };
-
-
   ctrl.getGenreNames = function() {
     GenreService.getGenres()
       .then(function(response) {
@@ -85,11 +78,7 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
 
   ctrl.slideViewRight = () => {
     ctrl.slideDir = 'slide-right';
-  }
-
-  ctrl.setStatusButtonSlide = (buttonNum, currentStateName) => {
-    ctrl.slideDir = ctrl.statusButtonSlide[currentStateName][buttonNum];    
-  }
+  }  
 
   ctrl.getGenreNames();
   ctrl.getBeginningWords();
