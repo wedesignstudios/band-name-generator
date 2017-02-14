@@ -1,11 +1,12 @@
 <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 
 <div class="col-12 text-center" ng-if="vm_name.loadingPage">
-  <div class="row align-items-center flex-row-full-height">
+  <div class="row align-items-center mt-20vh">
     <div class="col-12">
       <h1>Hang Tight.</h1>
       <h1>We're Making Magic.</h1>
       <h3>(And your band name!)</h3>
+      <div><i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i></div>
     </div>
   </div>  
 </div>
@@ -17,12 +18,16 @@
       <h3 class="my-3">:: Banderoo Logo ::</h3>
     </div>
   
-    <div class="col-12 text-center mt-2">
+    <div class="col-12 text-center mt-2 mb-5">
       <h1 id="band-name" class="my-1" ng-bind="vm_name.bandName.name"></h1>
-      <h1 class="my-1" ng-bind="vm_name.bandName.genre_id"></h1>
-      <a ui-sref="form.genre" class="btn btn-info my-1" ng-click="vm_name.resetBandName()">Get Another Band Name</a>    
+    </div>
+      
+    <div class="col-12 text-center mt-2">
+      <a ui-sref="form.genre" class="btn btn-carnation btn-banderoo no-focus-effects" ng-click="vm_name.resetBandName()"><span class="btn-text">Get Another Band Name</span></a>    
+      
       <div ng-click="vm_name.fbFeed(vm_name.bandName.name)">FB Feed</div>
-      <div><a ng-href="{{vm_name.twtrTweet(vm_name.twtrBandName())}}">Twitter</a></div>      
+      <div><a ng-href="{{vm_name.twtrTweet(vm_name.twtrBandName())}}">Twitter</a></div>
+
     </div>
   </div>
   
