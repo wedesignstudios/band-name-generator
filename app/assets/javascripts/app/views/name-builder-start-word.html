@@ -3,17 +3,18 @@
   <div class="row mt-5">
     <div class="col-12 mb-2">
       <h1 class="uppercase edmond-bold">Step #3</h1>
-      <h3>Should there be a start word?</h3>
-    </div>  
+      <h3>Start word?</h3>
+    </div>
 
-      <dropdown placeholder="Choose a start word:" list="vm_form.beginningWords" my-selected="vm_form.formData.beginsWith" property="string" value="string" color="carnation" class="col-12 col-xl-6 offset-xl-3 mb-3"></dropdown>
+      <dropdown placeholder="Choose a start word:" list="vm_form.beginningWords" my-selected="vm_form.formData.beginsWith" property="string" value="string" color="carnation" class="col-12 col-xl-6 offset-xl-3 mb-5"></dropdown>
       
-      <div class="col-12">
-        <a ui-sref="form.length" class="btn btn-secondary" ng-click="vm_form.slideViewRight()">Prev</a>
+
+      <div class="col-12 mb-4">        
+          <button type="submit" class="btn btn-ronchi btn-banderoo no-focus-effects" ng-if="!(vm_form.formData.beginsWith === '')"><span class="btn-text">Get Band Name</span></button>
       </div>
 
-      <div class="col-12">        
-          <button type="submit" class="btn btn-secondary mt-2" ng-if="!(vm_form.formData.beginsWith === '')">Get Band Name</button>
+      <div class="col-12 color-carnation">
+        <a ui-sref="form.length" class="btn-back no-hover-effects" ng-click="vm_form.slideViewRight()"><i class="fa fa-angle-left" aria-hidden="true"></i> Go Back</a>
       </div>
     </div>
 </div>
