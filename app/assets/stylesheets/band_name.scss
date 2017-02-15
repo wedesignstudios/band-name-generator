@@ -80,6 +80,20 @@
   font-family: Verdana;
 }
 
+// Banderoo logo
+
+.logo-sm {
+  display: inline-block;
+  max-width: 18rem;
+  width: 100%;
+}
+
+.logo-lg {
+  display: inline-block;
+  max-width: 30rem;
+  width: 100%;
+}
+
 // Animations between $state changes
 
 .nested-view {
@@ -149,5 +163,34 @@
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
   }
+}
+
+// Share icons
+
+.share-icon-text {
+  background-color: $ronchi;
+  color: $black;
+  display: block;
+}
+
+.share-icon-container {
+  border: 1px solid $ronchi;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+.share-icon {
+  color: $ronchi;
+  display: inline-block;
+  
+  > i, > a > i {
+    font-size: 3rem;
+
+    &.fa {
+      cursor: pointer;
+    }
+
+  }
+
 }
 
