@@ -1,6 +1,9 @@
 <script type="text/javascript" async src="https://platform.twitter.com/widgets.js"></script>
 
 <div class="col-12 text-center" ng-if="vm_name.loadingPage">
+  <div class="my-4 logo-sm">
+    <img ng-src="{{vm_name.banderooLogo}}" alt="Banderoo logo">
+  </div>
   <div class="row align-items-center mt-20vh">
     <div class="col-12">
       <h1>Hang Tight.</h1>
@@ -12,21 +15,31 @@
 </div>
 
 <div class="col-12 text-center" ng-show="!vm_name.loadingPage">
-  <div class="row">
+  <div class="my-4 logo-sm">
+    <img ng-src="{{vm_name.banderooLogo}}" alt="Banderoo logo">
+  </div>  
   
-    <div class="col-12 text-center">
-      <h3 class="my-3">:: Banderoo Logo ::</h3>
-    </div>
+  <div class="row">  
   
     <div class="col-12 text-center mt-2 mb-5">
       <h1 id="band-name" class="my-1" ng-bind="vm_name.bandName.name"></h1>
     </div>
       
     <div class="col-12 text-center mt-2">
-      <a ui-sref="form.genre" class="btn btn-carnation btn-banderoo no-focus-effects" ng-click="vm_name.resetBandName()"><span class="btn-text">Get Another Band Name</span></a>    
+        <a ui-sref="form.genre" class="btn btn-carnation btn-banderoo no-focus-effects" ng-click="vm_name.resetBandName()"><span class="btn-text">Get Another Band Name</span></a>        
+    </div>
       
-      <div ng-click="vm_name.fbFeed(vm_name.bandName.name)">FB Feed</div>
-      <div><a ng-href="{{vm_name.twtrTweet(vm_name.twtrBandName())}}">Twitter</a></div>
+    <div class="col-12 text-center mt-4">
+      <div class="share-icon-container">
+        <div class="share-icon-text mb-2 py-1 edmond-bold">Share:</div>
+        <div ng-click="vm_name.fbFeed(vm_name.bandName.name)" class="share-icon px-3 py-1"><i class="fa fa-facebook-official" aria-hidden="true"></i></div>
+        <div class="share-icon px-3 py-1">
+          <a class="no-hover-effects no-focus-effects" ng-href="{{vm_name.twtrTweet(vm_name.twtrBandName())}}">
+            <i class="fa fa-twitter-square" aria-hidden="true"></i>
+          </a>
+        </div>        
+      </div>
+    </div>
 
     </div>
   </div>
