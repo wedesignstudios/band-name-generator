@@ -20,6 +20,7 @@ angular
               url: '/genre',
               templateUrl: 'app/views/name-builder-genre.html',
               data: {
+                title: 'Type of band?',
                 bgColorClass: 'bg-color-genre',
                 bgImgClass: 'bg-img-genre'
               }              
@@ -33,6 +34,7 @@ angular
                       return 'form.genre';
                     }
                 }],
+                title: 'Length of band name?',
                 bgColorClass: 'bg-color-length',
                 bgImgClass: 'bg-img-length'
               }
@@ -48,6 +50,7 @@ angular
                       return 'form.length';
                     }
                 }],
+                title: 'Start word?',
                 bgColorClass: 'bg-color-start-word',
                 bgImgClass: 'bg-img-start-word'
               }
@@ -66,6 +69,7 @@ angular
                       return 'form.start-word';
                     }
                 }],
+                title: 'Your new band name!',
                 bgColorClass: 'bg-color-band-name bg-color-loading',
                 bgImgClass: 'bg-img-loading bg-img-band-name'                
               }
@@ -73,6 +77,7 @@ angular
           .state('otherwise', {
               url: '*path',
               templateUrl: 'app/views/index.html',
+              controller: 'IndexController as vm_index',
               data: {
                 bgColorClass: 'bg-color-index',
                 bgImgClass: 'bg-img-index'
