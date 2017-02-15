@@ -1,4 +1,4 @@
-function NameController($window, $timeout, ShareBandNameService, FormDataService, SocialMediaShareService) {
+function NameController($window, $timeout, ShareBandNameService, FormDataService, SocialMediaShareService, LogoService) {
   var ctrl = this;
 
   var fontClasses = [
@@ -15,6 +15,7 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
     return fontClasses[i-1];
   }
 
+  ctrl.banderooLogo = LogoService.getLogoWhite();
   ctrl.loadingPage = true;
   ctrl.bandName = ShareBandNameService;
 

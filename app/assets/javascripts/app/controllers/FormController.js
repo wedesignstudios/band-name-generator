@@ -1,12 +1,13 @@
-function FormController($window, $filter, $state, FormDataService, WordService, GenreService, BandNameService, ShareBandNameService, DetectIOSService) {
+function FormController($window, $filter, $state, FormDataService, WordService, GenreService, BandNameService, ShareBandNameService, DetectIOSService, LogoService) {
   var ctrl = this;
 
+  ctrl.banderooLogo = LogoService.getLogoWhite();
   ctrl.formData = FormDataService.formData;
   ctrl.formData.genre_id = ''; 
   ctrl.formData.beginsWith = '';  
   ctrl.bandWords = [];
   ctrl.bandName = ShareBandNameService;
-  ctrl.iOS = DetectIOSService.iOS();  
+  ctrl.iOS = DetectIOSService.iOS();   
   
   ctrl.getGenreNames = function() {
     GenreService.getGenres()

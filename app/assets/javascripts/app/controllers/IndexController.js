@@ -1,6 +1,7 @@
-function IndexController() {
+function IndexController(LogoService) {
   var ctrl = this;
 
+  ctrl.banderooLogo = LogoService.getLogoYellow();
 }
 
 angular
