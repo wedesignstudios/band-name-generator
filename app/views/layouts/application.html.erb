@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="app">
   <head>
-    <title>BandNameGenerator</title>
+    <title ng-if="$state.current.name === 'index' || $state.current.name === 'otherwise' ">Banderoo</title>
+    <title ng-if="$state.current.name != 'index'">Banderoo • {{ $state.current.data.title }}</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -11,7 +12,7 @@
     
   </head>
 
-  <body ng-app="app" ng-class="[$state.current.data.bgColorClass, $state.current.data.bgImgClass]" class="bg-img">    
+  <body ng-class="[$state.current.data.bgColorClass, $state.current.data.bgImgClass]" class="bg-img">    
       <div class="container">
       
         <%= render 'layouts/notices' %>
