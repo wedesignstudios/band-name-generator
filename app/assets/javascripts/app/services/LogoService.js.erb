@@ -1,0 +1,15 @@
+function LogoService() {
+
+  this.getLogoWhite = () => {
+    return '<%= image_url("banderoo_logo_white.svg") %>';
+  }
+
+  this.getLogoYellow = () => {
+    return '<%= image_url("banderoo_logo_yellow.svg") %>';
+  }
+
+}
+
+angular
+  .module('app')
+  .service('LogoService', LogoService);
