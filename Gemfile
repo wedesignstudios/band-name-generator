@@ -9,6 +9,7 @@ gem 'coffee-rails', '~> 4.2'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'rails-erd'
+gem 'rails_real_favicon'
 
 group :development, :test do
   gem 'byebug', platform: :mri
