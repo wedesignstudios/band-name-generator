@@ -4,7 +4,7 @@
   <div class="my-4 logo-sm">
     <img ng-src="{{vm_name.banderooLogo}}" alt="Banderoo logo">
   </div>
-  <div class="row align-items-center mt-20vh">
+  <div class="row align-items-center mt-15vh">
     <div class="col-12">
       <h1>Hang Tight.</h1>
       <h1>We're Making Magic.</h1>
@@ -21,15 +21,17 @@
   
   <div class="row">  
   
-    <div class="col-12 text-center mt-2 mb-5">
-      <h1 id="band-name" class="my-1" ng-bind="vm_name.bandName.name"></h1>
+    <div class="col-12 text-center my-5">
+      <div class="band-name-container">
+        <h1 id="band-name" class="my-1" ng-bind="vm_name.bandName.name"></h1>
+      </div>
     </div>
       
-    <div class="col-12 text-center mt-2">
+    <div class="col-12 text-center mt-3">
         <a ui-sref="form.genre" class="btn btn-carnation btn-banderoo no-focus-effects" ng-click="vm_name.resetBandName()"><span class="btn-text">Get Another Band Name</span></a>        
     </div>
       
-    <div class="col-12 text-center mt-4">
+    <div class="col-12 text-center mt-5">
       <div class="share-icon-container">
         <div class="share-icon-text mb-2 py-1 edmond-bold">Share:</div>
         <div ng-click="vm_name.fbFeed(vm_name.bandName.name)" class="share-icon px-3 py-1"><i class="fa fa-facebook-official" aria-hidden="true"></i></div>
@@ -39,6 +41,10 @@
           </a>
         </div>        
       </div>
+    </div>
+
+    <div class="col-12 text-center mt-4">
+      <p class="mb-0">Created by <a href="https://wedesignstudios.com/" target="_blank">WE Design Studios</a> {{ vm_name.copyright }}</p>      
     </div>
 
     </div>
