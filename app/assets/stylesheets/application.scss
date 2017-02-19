@@ -84,8 +84,12 @@
     margin-bottom: $baseline;
   }
 
-  a {
-    color: inherit;
+  a, a:link, a:visited, a:hover, a:active  {
+    color: $carnation;
+
+    &.btn {
+      color: $white;
+    }
   }
 
   * {
@@ -101,8 +105,17 @@
     font-family: inherit;
   }
 
+  .my-6 {
+    margin-top: $spacer*3.75;
+    margin-bottom: $spacer*3.75;
+  }
+
   .mb-6 {
     margin-bottom: $spacer*3.75;
+  }
+
+  .mt-15vh {
+    margin-top: 15vh;
   }
 
   .mt-20vh {

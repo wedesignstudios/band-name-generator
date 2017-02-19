@@ -1,10 +1,28 @@
 /* Smartphones (portrait) ----------- */
 @media only screen and (max-width : 414px) {
-  h1 {
+  h1, h1#band-name {
     font-size: 3.25rem;
   }
 
   h3 {
     font-size: 1.85rem;
+  }
+
+  .logo-sm {    
+    max-width: 10rem;    
+  }
+
+// Length of band name icons
+  .radio-tile-group {
+    
+    .input-container {
+      height: 6rem;
+      width: 6rem;
+    
+      .icon svg {      
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+    }
   }
 }
