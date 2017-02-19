@@ -6,7 +6,7 @@
       <h3>Type of band?</h3>
     </div>
     
-    <dropdown placeholder="Choose a genre:" list="vm_form.genres" my-selected="vm_form.formData.genre_id" property="name" value="id" color="cornflower" class="col-12 col-xl-6 offset-xl-3 mb-5 red"></dropdown>
+    <dropdown placeholder="Choose a genre:" list="vm_form.genres" my-selected="vm_form.formData.genre_id" property="name" value="id" color="cornflower" class="col-12 col-xl-6 offset-xl-3 mb-5 mt-4 red"></dropdown>
     
     <div class="col-12">
       <a ui-sref="form.length" class="btn btn-ronchi btn-banderoo no-focus-effects px-5" ng-if="!(vm_form.formData.genre_id === '')" ng-click="vm_form.slideViewLeft()"><span class="btn-text">Next</span></a>
