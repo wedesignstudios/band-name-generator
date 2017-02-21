@@ -100,4 +100,6 @@ Rails.application.configure do
       }
   end
 
+  config.secret_key_base = ENV["SECRET_KEY_BASE"]
+
 end
