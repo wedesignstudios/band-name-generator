@@ -14,7 +14,4 @@ test:
   database: mybanderoo_test  
 
 production:
-  <<: *default
-  database: mybanderoo_production
-  username: mybanderoo
-  password: <%= ENV['MYBANDEROO_DATABASE_PASSWORD'] %>
+  <<: *default  
