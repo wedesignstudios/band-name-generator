@@ -17,6 +17,7 @@ gem 'angular-rails-templates'
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'font-awesome-rails'
 gem 'browserify-rails'
+gem 'rack-cors', :require => 'rack/cors'
 
 group :development, :test do
   gem 'byebug', platform: :mri
