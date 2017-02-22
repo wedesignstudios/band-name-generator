@@ -84,7 +84,7 @@ angular
               } 
           });      
   }])
-    .run(function($rootScope, $state, $injector) {
+    .run(['$rootScope', '$state', '$injector', function($rootScope, $state, $injector) {
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
           if (toState.data && toState.data.redirect) {            
             var redirect = $injector.invoke(toState.data.redirect);
@@ -95,4 +95,4 @@ angular
           }
         });
         $rootScope.$state = $state;
-  });
+  }]);
