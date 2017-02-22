@@ -1,6 +1,6 @@
 angular
   .module('app', ['ui.router', 'templates', 'ngAnimate'])
-  .config(function($stateProvider) {      
+  .config(['$stateProvider', function($stateProvider) {      
       $stateProvider
           .state('index', {
               url: '/',
@@ -83,7 +83,7 @@ angular
                 bgImgClass: 'bg-img-index'
               } 
           });      
-  })
+  }])
     .run(function($rootScope, $state, $injector) {
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
           if (toState.data && toState.data.redirect) {            
