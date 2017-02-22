@@ -34,6 +34,8 @@ function SocialMediaShareService($window) {
 
 }
 
+SocialMediaShareService.$inject = ['$window'];
+
 angular
   .module('app')
   .service('SocialMediaShareService', SocialMediaShareService);

@@ -86,6 +86,8 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
 
 }
 
+FormController.$inject = ['$window', '$filter', '$state', 'FormDataService', 'WordService', 'GenreService', 'BandNameService', 'ShareBandNameService', 'DetectIOSService', 'LogoService'];
+
 angular
   .module('app')
   .controller('FormController', FormController);

@@ -58,6 +58,8 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
   
 }
 
+NameController.$inject = ['$window', '$timeout', 'ShareBandNameService', 'FormDataService', 'SocialMediaShareService', 'LogoService'];
+
 angular
   .module('app')
   .controller('NameController', NameController);

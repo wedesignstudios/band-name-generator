@@ -6,6 +6,8 @@ function GenreService($http) {
 
 }
 
+GenreService.$inject = ['$http'];
+
 angular
   .module('app')
   .service('GenreService', GenreService);

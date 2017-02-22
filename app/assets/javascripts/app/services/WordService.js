@@ -6,6 +6,8 @@ function WordService($http) {
 
 }
 
+WordService.$inject = ['$http'];
+
 angular
   .module('app')
   .service('WordService', WordService);

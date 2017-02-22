@@ -58,6 +58,8 @@ function Dropdown($rootScope, $document) {
   }
 }
 
+Dropdown.$inject = ['$rootScope', '$document'];
+
 angular
   .module('app')
   .directive('dropdown', Dropdown);

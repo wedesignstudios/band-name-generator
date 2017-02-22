@@ -5,6 +5,8 @@ function BandNameService($http) {
   }
 }
 
+BandNameService.$inject = ['$http'];
+
 angular
   .module('app')
   .service('BandNameService', BandNameService);
