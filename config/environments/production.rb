@@ -19,8 +19,8 @@ Rails.application.configure do
   # config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
   config.public_file_server.enabled = true
   config.public_file_server.headers = {
-      # 'Access-Control-Allow-Origin' => '*',  # only for debugging
-      'Access-Control-Allow-Origin' => 'http://cdn.mybanderoo.com',
+      'Access-Control-Allow-Origin' => '*',  # only for debugging
+      # 'Access-Control-Allow-Origin' => 'http://cdn.mybanderoo.com',
       'Access-Control-Request-Method' => %w{GET OPTIONS}.join(",")
     }
 
