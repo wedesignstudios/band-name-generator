@@ -9,8 +9,8 @@ if defined? Rack::Cors
              http://mybanderoo.com
             https://www.mybanderoo.com
              http://www.mybanderoo.com
-            https://mybanderoo.herokuapp.com/
-             http://mybanderoo.herokuapp.com/
+            https://mybanderoo.herokuapp.com
+             http://mybanderoo.herokuapp.com
         ]
         resource '/assets/*'
     end
