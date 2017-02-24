@@ -20,10 +20,10 @@ function SocialMediaShareService($window) {
     this.fbFeed = (bandName) => {
       $window.FB.ui({
         method: 'feed',                
-        link: 'https://mybanderoo.com',
+        link: 'http://mybanderoo.com',
         title: 'I just used Banderoo to name my band "' + bandName + '"',
-        picture: 'http://static01.nyt.com/images/2015/02/19/arts/international/19iht-btnumbers19A/19iht-btnumbers19A-facebookJumbo-v2.jpg',
-        description: 'Naming your band is hard. Banderoo makes it easy. And fun!',
+        picture: 'http://cdn.mybanderoo.com/assets/facebook_share_image-154be9fc622403b3cc5afbd80fa58cdbdbd48f90a099193cea1bebddbda2699b.png',
+        description: 'Need a band name? Banderoo makes naming your band easy. And fun!',
         caption: 'mybanderoo.com',
       }, function(response){});
     }
