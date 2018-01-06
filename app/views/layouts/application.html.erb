@@ -13,12 +13,14 @@
     <meta property="og:title" content="Banderoo" />
     <meta property="og:description" content="Need a band name? Banderoo makes naming your band easy. And fun!" />
     <meta property="og:image" content="http://cdn.mybanderoo.com/assets/facebook_share_image-154be9fc622403b3cc5afbd80fa58cdbdbd48f90a099193cea1bebddbda2699b.png" />
+    <%= render 'layouts/google_tag_manager_head' %>
     <%= render 'layouts/google_analytics' %>
     <%= render 'application/favicon' %>
     
   </head>
 
   <body ng-class="[$state.current.data.bgColorClass, $state.current.data.bgImgClass]" class="bg-img">    
+    <%= render 'layouts/google_tag_manager_body' %>
       <div class="container">
       
         <%= render 'layouts/notices' %>
