@@ -19,7 +19,7 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
   ctrl.loadingPage = true;
   ctrl.bandName = ShareBandNameService;
   ctrl.currentDay = new Date();  
-  ctrl.copyright = `©${ctrl.currentDay.getFullYear()}`;
+  ctrl.copyright = `©2017-${ctrl.currentDay.getFullYear()}`;
 
   ctrl.removeClassFromElement = (className, element) => {
     let elem = angular.element(document.querySelector(element));
