@@ -1,6 +1,6 @@
 class Word < ApplicationRecord
   validates :string, presence: :true
-  validates_uniqueness_of :string
+  validates_uniqueness_of :string, :message => '%{value} already exists in the database'
 
   def self.build_band_name(number_of_words)
     band_name = []
