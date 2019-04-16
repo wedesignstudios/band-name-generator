@@ -18,7 +18,7 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
   ctrl.banderooLogo = LogoService.getLogoWhite();
   ctrl.loadingPage = true;
   ctrl.bandName = ShareBandNameService;
-  ctrl.currentDay = new Date();  
+  ctrl.currentDay = new Date();
   ctrl.copyright = `©2017-${ctrl.currentDay.getFullYear()}`;
 
   ctrl.removeClassFromElement = (className, element) => {
@@ -34,20 +34,20 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
   ctrl.hideLoadingPage = () => {
     ctrl.removeClassFromElement('bg-color-loading', 'body');
     ctrl.removeClassFromElement('bg-img-loading', '.bg-img');
-    ctrl.loadingPage = false;    
+    ctrl.loadingPage = false;
   }
 
   ctrl.resetBandName = function() {
     ctrl.bandName.name = '';
     ctrl.bandName.genre_id = '';
-    FormDataService.formData = {};    
+    FormDataService.formData = {};
   }
 
   ctrl.twtrBandName = () => {
-    return ctrl.bandName.name.replace(/\s/g, '+');    
+    return ctrl.bandName.name.replace(/\s/g, '+');
   }
-  
-  ctrl.fbFeed = SocialMediaShareService.fbFeed;
+
+  ctrl.fbShare = SocialMediaShareService.fbShare;
   ctrl.twtrTweet = SocialMediaShareService.twtrTweet;
 
   SocialMediaShareService.fbSDK;
@@ -55,7 +55,7 @@ function NameController($window, $timeout, ShareBandNameService, FormDataService
   $timeout(ctrl.hideLoadingPage, 3000).then( () => {
     ctrl.addClassToElement(getFontClass(ctrl.bandName.genre_id), 'h1#band-name')
   });
-  
+
 }
 
 NameController.$inject = ['$window', '$timeout', 'ShareBandNameService', 'FormDataService', 'SocialMediaShareService', 'LogoService'];
