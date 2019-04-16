@@ -12,22 +12,21 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="Banderoo" />
     <meta property="og:description" content="Need a band name? Banderoo makes naming your band easy. And fun!" />
-    <meta property="og:image" content="http://cdn.mybanderoo.com/assets/facebook_share_image-154be9fc622403b3cc5afbd80fa58cdbdbd48f90a099193cea1bebddbda2699b.png" />
+    <meta property="og:image" content='<%= image_url('facebook_share_image_square.png') %>' />
     <%= render 'layouts/google_tag_manager_head' %>
     <%= render 'layouts/google_analytics' %>
     <%= render 'application/favicon' %>
-    
+
   </head>
 
-  <body ng-class="[$state.current.data.bgColorClass, $state.current.data.bgImgClass]" class="bg-img">    
+  <body ng-class="[$state.current.data.bgColorClass, $state.current.data.bgImgClass]" class="bg-img">
     <%= render 'layouts/google_tag_manager_body' %>
       <div class="container">
-      
         <%= render 'layouts/notices' %>
         <%#= yield %>
 
         <ui-view class="row justify-content-center"></ui-view>
 
-      </div>    
+      </div>
   </body>
 </html>
