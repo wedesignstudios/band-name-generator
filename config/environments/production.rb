@@ -93,7 +93,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Configure Browserify to use babelify to compile ES6
-  config.browserify_rails.commandline_options = "-t [ babelify --presets [ es2015 ] ]"
+  config.browserify_rails.commandline_options = "-t [ babelify --presets [ preset-env ] ]"
 
   # Run on all javascript files
   config.browserify_rails.force = true
