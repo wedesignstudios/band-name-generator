@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 20161126174752) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "band_names", force: :cascade do |t|
     t.string   "name"
     t.integer  "genre_id"

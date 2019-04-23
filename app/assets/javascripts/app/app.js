@@ -1,6 +1,6 @@
 angular
   .module('app', ['ui.router', 'templates', 'ngAnimate'])
-  .config(['$stateProvider', function($stateProvider) {      
+  .config(['$stateProvider', function($stateProvider) {
       $stateProvider
           .state('index', {
               url: '/',
@@ -9,7 +9,7 @@ angular
               data: {
                 bgColorClass: 'bg-color-index',
                 bgImgClass: 'bg-img-index'
-              }                            
+              }
           })
           .state('form', {
               url: '/name-builder',
@@ -23,7 +23,7 @@ angular
                 title: 'Type of band?',
                 bgColorClass: 'bg-color-genre',
                 bgImgClass: 'bg-img-genre'
-              }              
+              }
           })
           .state('form.length', {
               url: '/length',
@@ -71,7 +71,7 @@ angular
                 }],
                 title: 'Your new band name!',
                 bgColorClass: 'bg-color-band-name bg-color-loading',
-                bgImgClass: 'bg-img-loading bg-img-band-name'                
+                bgImgClass: 'bg-img-loading bg-img-band-name'
               }
           })
           .state('otherwise', {
@@ -81,16 +81,16 @@ angular
               data: {
                 bgColorClass: 'bg-color-index',
                 bgImgClass: 'bg-img-index'
-              } 
-          });      
+              }
+          });
   }])
     .run(['$rootScope', '$state', '$injector', function($rootScope, $state, $injector) {
         $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
-          if (toState.data && toState.data.redirect) {            
+          if (toState.data && toState.data.redirect) {
             var redirect = $injector.invoke(toState.data.redirect);
-            if (redirect) {              
+            if (redirect) {
               event.preventDefault();
-              $state.go(redirect);              
+              $state.go(redirect);
             }
           }
         });
