@@ -42,7 +42,7 @@
       "url": "heroku/ruby"
     }
   ],
-  "stack": "heroku-16",
+  "stack": "container",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate db:seed"
   }
