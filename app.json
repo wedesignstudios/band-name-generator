@@ -1,7 +1,8 @@
 {
   "name": "band-name-generator",
   "scripts": {
-  },
+    "postdeploy": "bundle exec rake db:seed"
+  }
   "env": {
     "LANG": {
       "required": true
@@ -26,7 +27,7 @@
   "formation": {
     "web": {
       "quantity": 1,
-      "size": "hobby"
+      "size": "free"
     }
   },
   "addons": [
@@ -40,8 +41,5 @@
       "url": "heroku/ruby"
     }
   ],
-  "stack": "container",
-  "scripts": {
-    "postdeploy": "bundle exec rake db:seed"
-  }
+  "stack": "container"
 }
