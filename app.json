@@ -44,6 +44,6 @@
   ],
   "stack": "container",
   "scripts": {
-    "postdeploy": "bundle exec rake db:migrate db:seed"
+    "postdeploy": "bundle exec rake db:seed"
   }
 }
