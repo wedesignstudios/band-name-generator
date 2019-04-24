@@ -16,7 +16,7 @@ RUN bundle install
 
 COPY . /band-name-generator
 
-RUN npm install
+RUN npm install && bundle exec rake assets:precompile
 
 # Add a script to be executed every time the container starts.
 COPY entrypoint.sh /usr/bin/
