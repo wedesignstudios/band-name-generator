@@ -20,7 +20,8 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
-    }
+    },
+    "REVIEW_ENVIRONMENT": true
   },
   "formation": {
     "worker": {
