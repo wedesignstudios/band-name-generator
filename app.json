@@ -1,8 +1,5 @@
 {
   "name": "band-name-generator",
-  "scripts": {
-    "postdeploy": "./db/db-seed.sh"
-  },
   "env": {
     "LANG": {
       "required": true
