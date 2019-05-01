@@ -1,4 +1,4 @@
-function Dropdown($rootScope, $document) {
+function wdsDropdown($rootScope, $document) {
   return {
     restrict: 'E',
     templateUrl: 'app/views/dropdown.html',
@@ -13,43 +13,43 @@ function Dropdown($rootScope, $document) {
     },
     link: function(scope) {
       scope.listVisible = false;
-      
+
       if(scope.mySelected === '') {
         scope.isPlaceholder = true;
       } else {
         scope.isPlaceholder = false;
-        scope.display = scope.mySelected[scope.property];        
+        scope.display = scope.mySelected[scope.property];
       }
 
       scope.select = function(item) {
-        scope.isPlaceholder = false;        
+        scope.isPlaceholder = false;
         scope.mySelected = item;
-        scope.display = scope.mySelected[scope.property];        
+        scope.display = scope.mySelected[scope.property];
       };
 
-      scope.isSelected = function(item) {        
-        return item[scope.property] === scope.mySelected[scope.property];        
+      scope.isSelected = function(item) {
+        return item[scope.property] === scope.mySelected[scope.property];
       };
 
       scope.show = function() {
-        scope.listVisible = true;        
+        scope.listVisible = true;
       };
 
       var documentClicked = function(e) {
-        let target = angular.element(e.target);        
-        let parent = angular.element(target.parent());        
+        let target = angular.element(e.target);
+        let parent = angular.element(target.parent());
 
-        if ( 
+        if (
             (!parent.hasClass('selected') && target.hasClass('target-item')) ||
              (parent.hasClass('selected') && target.hasClass('target-item')) ||
              (parent.hasClass('clicked')) ||
              (!parent.hasClass('dropdown-display'))
-            ) {          
+            ) {
 
             scope.$applyAsync(function() {
               scope.listVisible = false;
             });
-          } 
+          }
         };
 
       $document.bind('click', documentClicked);
@@ -58,8 +58,8 @@ function Dropdown($rootScope, $document) {
   }
 }
 
-Dropdown.$inject = ['$rootScope', '$document'];
+wdsDropdown.$inject = ['$rootScope', '$document'];
 
 angular
   .module('app')
-  .directive('dropdown', Dropdown);
+  .directive('wdsDropdown', wdsDropdown);
