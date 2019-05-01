@@ -1,7 +1,7 @@
 function wdsDropdown($rootScope, $document) {
   return {
     restrict: 'E',
-    templateUrl: 'app/views/dropdown.html',
+    templateUrl: 'app/views/wds-dropdown.html',
     scope: {
       placeholder: '@',
       list: '=',
