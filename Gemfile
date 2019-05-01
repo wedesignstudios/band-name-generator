@@ -33,4 +33,4 @@ source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.1.0'
 end
 
-ruby '2.2.5'
+ruby '~>2.5'

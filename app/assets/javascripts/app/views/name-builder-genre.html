@@ -1,13 +1,13 @@
-<div class="ui-view-content">  
-  
+<div class="ui-view-content">
+
   <div class="row mt-5">
     <div class="col-12 mb-2">
       <h1 class="uppercase edmond-bold">Step #1</h1>
       <h3>Type of band?</h3>
     </div>
-    
-    <dropdown placeholder="Choose a genre:" list="vm_form.genres" my-selected="vm_form.formData.genre_id" property="name" value="id" color="cornflower" class="col-12 col-xl-6 offset-xl-3 mb-5 mt-4 red"></dropdown>
-    
+
+    <wds-dropdown placeholder="Choose a genre:" list="vm_form.genres" my-selected="vm_form.formData.genre_id" property="name" value="id" color="cornflower" class="col-12 col-xl-6 offset-xl-3 mb-5 mt-4 red"></wds-dropdown>
+
     <div class="col-12">
       <a ui-sref="form.length" class="btn btn-ronchi btn-banderoo no-focus-effects px-5" ng-if="!(vm_form.formData.genre_id === '')" ng-click="vm_form.slideViewLeft()"><span class="btn-text">Next</span></a>
     </div>

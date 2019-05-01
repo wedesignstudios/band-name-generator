@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require tether
+//= require popper.min
 //= require bootstrap
 //= require bootstrap-sprockets
 //= require angular

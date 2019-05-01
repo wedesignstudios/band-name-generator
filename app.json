@@ -1,6 +1,7 @@
 {
   "name": "band-name-generator",
   "scripts": {
+    "postdeploy": "bundle exec rake db:seed"
   },
   "env": {
     "LANG": {
@@ -20,14 +21,13 @@
     },
     "SECRET_KEY_BASE": {
       "required": true
-    }
+    },
+    "REVIEW_ENVIRONMENT": "true"
   },
   "formation": {
-    "worker": {
-      "quantity": 1
-    },
     "web": {
-      "quantity": 1
+      "quantity": 1,
+      "size": "free"
     }
   },
   "addons": [
@@ -41,8 +41,5 @@
       "url": "heroku/ruby"
     }
   ],
-  "stack": "heroku-16",
-  "scripts": {
-    "postdeploy": "bundle exec rake db:migrate db:seed"
-  }
+  "stack": "container"
 }

@@ -35,8 +35,10 @@ Rails.application.configure do
 
   # `config.assets.precompile` and `config.assets.version` have moved to config/initializers/assets.rb
 
-  # Enable serving of images, stylesheets, and JavaScripts from an asset server.
-  config.action_controller.asset_host = 'https://cdn.mybanderoo.com'
+  unless ENV["REVIEW_ENVIRONMENT"] == "true"
+    # Enable serving of images, stylesheets, and JavaScripts from an asset server.
+    config.action_controller.asset_host = 'https://cdn.mybanderoo.com'
+  end
 
   # Specifies the header that your server uses for sending files.
   # config.action_dispatch.x_sendfile_header = 'X-Sendfile' # for Apache
@@ -93,7 +95,7 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Configure Browserify to use babelify to compile ES6
-  config.browserify_rails.commandline_options = "-t [ babelify --presets [ es2015 ] ]"
+  config.browserify_rails.commandline_options = "-t [ babelify --presets [ @babel/preset-env ] ]"
 
   # Run on all javascript files
   config.browserify_rails.force = true

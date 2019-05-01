@@ -1,15 +1,15 @@
 <div class="ui-view-content">
-  
+
   <div class="row mt-5">
     <div class="col-12 mb-2">
       <h1 class="uppercase edmond-bold">Step #3</h1>
       <h3>Start word?</h3>
     </div>
 
-      <dropdown placeholder="Choose a start word:" list="vm_form.beginningWords" my-selected="vm_form.formData.beginsWith" property="string" value="string" color="carnation" class="col-12 col-xl-6 offset-xl-3 mb-5 mt-4"></dropdown>
-      
+      <wds-dropdown placeholder="Choose a start word:" list="vm_form.beginningWords" my-selected="vm_form.formData.beginsWith" property="string" value="string" color="carnation" class="col-12 col-xl-6 offset-xl-3 mb-5 mt-4"></wds-dropdown>
 
-      <div class="col-12 mb-4">        
+
+      <div class="col-12 mb-4">
           <button type="submit" class="btn btn-ronchi btn-banderoo no-focus-effects" ng-if="!(vm_form.formData.beginsWith === '')"><span class="btn-text">Get Band Name</span></button>
       </div>
 

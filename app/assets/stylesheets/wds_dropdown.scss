@@ -9,11 +9,11 @@ $font-size: 1.45rem;
   vertical-align: middle;
 }
 
-@mixin bold-font-kerning {  
+@mixin bold-font-kerning {
   letter-spacing: 0.06rem;
 }
 
-dropdown {
+wds-dropdown {
   /* float: left; */
   display: block;
   width: 250px;
@@ -27,15 +27,15 @@ dropdown {
           @include bold-font-kerning;
           width: 100%;
           height: $height;
-          cursor: pointer;          
+          cursor: pointer;
           box-sizing: border-box;
-            
+
             &.cornflower {
-              background-color: $cornflower;              
+              background-color: $cornflower;
             }
 
             &.carnation {
-              background-color: $carnation;              
+              background-color: $carnation;
             }
 
           $icon-width: 1rem;
@@ -84,12 +84,12 @@ dropdown {
               position: absolute;
               width: 100%;
               z-index: 2;
-              cursor: pointer;              
+              cursor: pointer;
 
                 >div {
                   @include bold-font-kerning;
                   background: white;
-                  float: left;                  
+                  float: left;
                   width: 100%;
                   padding: 0 $spacing;
                   font-size: $font-size;
@@ -111,13 +111,13 @@ dropdown {
                       background: $black;
                       border: none;
                       color: white;
-                        
+
                         &.cornflower {
-                          background: $cornflower;                      
+                          background: $cornflower;
                         }
 
                         &.carnation {
-                          background: $carnation;                      
+                          background: $carnation;
                         }
                     }
 

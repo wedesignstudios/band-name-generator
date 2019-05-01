@@ -7,11 +7,19 @@ default: &default
 
 development:
   <<: *default
-  database: mybanderoo_development  
+  database: mybanderoo_development
+  host: db
+  password:
+  pool: 5
+  username: postgres
 
 test:
   <<: *default
-  database: mybanderoo_test  
+  database: mybanderoo_test
+  host: db
+  password:
+  pool: 5
+  username: postgres
 
 production:
-  <<: *default  
+  <<: *default

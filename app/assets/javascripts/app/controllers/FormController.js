@@ -3,30 +3,30 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
 
   ctrl.banderooLogo = LogoService.getLogoWhite();
   ctrl.formData = FormDataService.formData;
-  ctrl.formData.genre_id = ''; 
-  ctrl.formData.beginsWith = '';  
+  ctrl.formData.genre_id = '';
+  ctrl.formData.beginsWith = '';
   ctrl.bandWords = [];
   ctrl.bandName = ShareBandNameService;
-  ctrl.iOS = DetectIOSService.iOS();   
-  
+  ctrl.iOS = DetectIOSService.iOS();
+
   ctrl.getGenreNames = function() {
     GenreService.getGenres()
       .then(function(response) {
-        ctrl.genres = response.data.genres;        
+        ctrl.genres = response.data;
       });
   }
 
   ctrl.getBeginningWords = function() {
     WordService.getWords()
       .then(function(response) {
-        var beginningWords = $filter('removeBeginningWordsFilter')(response.data.words, true);
+        var beginningWords = $filter('removeBeginningWordsFilter')(response.data, true);
         ctrl.beginningWords = $filter('editBeginningWordsFilter')(beginningWords, ['The', 'By', 'Of', 'That', 'This', 'In', 'No start word']);
       });
   }
 
   ctrl.setBeginningWords = function() {
     if (ctrl.formData.beginsWith.string != 'No start word' && ctrl.formData.beginsWith.string != '') {
-      ctrl.bandWords.push(ctrl.formData.beginsWith.string);      
+      ctrl.bandWords.push(ctrl.formData.beginsWith.string);
     }
   }
 
@@ -38,7 +38,7 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
     WordService.getWords()
       .then(function(response) {
 
-        var words = $filter('removeBeginningWordsFilter')(response.data.words, false);
+        var words = $filter('removeBeginningWordsFilter')(response.data, false);
         var i = 0
 
         while (i++ < numOfWords) {
@@ -57,20 +57,20 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
   }
 
   ctrl.saveBandName = function() {
-    var data = { 
+    var data = {
       band_name: {
         name: ctrl.bandName.name,
         genre_id: parseInt(ctrl.bandName.genre_id)
       },
     };
-    BandNameService.postBandName(data);    
-  }  
+    BandNameService.postBandName(data);
+  }
 
   ctrl.getBandName = function(numOfWords) {
-    ctrl.setBandGenre();    
+    ctrl.setBandGenre();
     ctrl.setBeginningWords();
     ctrl.setBandWords(numOfWords);
-    $window.location.href = '/#/band-name';    
+    $window.location.href = '/#!/band-name';
   }
 
   ctrl.slideViewLeft = () => {
@@ -79,7 +79,7 @@ function FormController($window, $filter, $state, FormDataService, WordService, 
 
   ctrl.slideViewRight = () => {
     ctrl.slideDir = 'slide-right';
-  }  
+  }
 
   ctrl.getGenreNames();
   ctrl.getBeginningWords();
