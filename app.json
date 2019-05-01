@@ -1,7 +1,7 @@
 {
   "name": "band-name-generator",
   "scripts": {
-    "postdeploy": "bundle exec rake db:schema:load db:seed"
+    "postdeploy": "bundle exec rake db:seed"
   },
   "env": {
     "LANG": {
